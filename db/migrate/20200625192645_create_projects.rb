@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :address
       t.string :name
       t.text :description
-      t.references :association, null: false, foreign_key: true
+      t.references :charity, null: false, foreign_key: true
 
       t.timestamps
     end
