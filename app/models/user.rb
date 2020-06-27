@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :company
   acts_as_taggable_on :skills
+  validates :first_name, :last_name, :address, :admin, presence: true
 end
