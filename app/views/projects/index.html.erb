@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Projects</h1>
+    <div class="cards">
+      <% @projects.each do |project| %>
+        <%= render "shared/card-project", project: project %>
+<!--         <%= link_to "Show more", project_path(project) %>
+ -->      <% end %>
+    </div>
+</div>
