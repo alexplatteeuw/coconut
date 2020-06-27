@@ -1,0 +1,17 @@
+
+    <div class="card card-body card-category">
+      <%= image_tag "resto.jpg", class: "card-image" %>
+      <h2 class="text-center" ><%= project.name %></h2>
+      <p class="text-center" ><%= project.description %></p>
+      <%= link_to "Show more", project_path(project), class: "text-secondary"%>
+
+      <hr class="m-0">
+
+      <div class="d-flex justify-content-around align-items-center pt-4 ">
+        <p class="mb-0">6 heures</p>
+        <div class="d-flex justify-content-start" >
+          <%= image_tag "clem.jpg", class: "avatar", alt: "avatar" %>
+          <%= image_tag "alex.jpg", class: "avatar", alt: "avatar" %>
+        </div>
+      </div>
+    </div>
