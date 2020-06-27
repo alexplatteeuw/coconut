@@ -63,17 +63,17 @@ puts "Drop users db"
 User.destroy_all
 
 puts "Add 2 users"
-user = User.new
-user.first_name = "Maxime"
-user.last_name = "Berthelot"
-user.email = "max@lewagon.org"
-user.password = "maxime"
-user.description = "j'ai un deug"
-user.admin = true
-user.company = Company.first
-user.address = "31 rue de citeaux, 75012"
-user.skill_list ="CSS, JS, Deug"
-user.save!
+admin_user = User.new
+admin_user.first_name = "Maxime"
+admin_user.last_name = "Berthelot"
+admin_user.email = "max@lewagon.org"
+admin_user.password = "maxime"
+admin_user.description = "j'ai un deug"
+admin_user.admin = true
+admin_user.company = Company.first
+admin_user.address = "31 rue de citeaux, 75012"
+admin_user.skill_list ="CSS, JS, Deug"
+admin_user.save!
 
 user = User.new
 user.first_name = "Clément"
