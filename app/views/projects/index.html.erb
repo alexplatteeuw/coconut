@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Projects</h1>
+  <ul>
+  <% @projects.each do |project| %>
+  <li>
+    <h3>
+      <%= project.name %>
+    </h3>
+    <p>
+      <%= project.description %>
+    </p>
+
+    <%= link_to "Show more", project_path(project) %>
+  </li>
+    <% end %>
+  </ul>
+</div>
