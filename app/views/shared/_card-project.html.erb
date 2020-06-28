@@ -1,6 +1,13 @@
 
     <div class="card card-body card-category">
       <%= image_tag "resto.jpg", class: "card-image" %>
+      <div>
+        <span class="badge badge-primary">Css</span>
+        <span class="badge badge-secondary">Html</span>
+        <span class="badge badge-success">JS</span>
+        <span class="badge badge-warning">IT</span>
+        <span class="badge badge-info">SQL</span>
+      </div>
       <h2 class="text-center" ><%= project.name %></h2>
       <p class="text-center" ><%= project.description %></p>
       <%= link_to "Show more", project_path(project), class: "text-secondary"%>
@@ -12,6 +19,7 @@
         <div class="d-flex justify-content-start" >
           <%= image_tag "clem.jpg", class: "avatar", alt: "avatar" %>
           <%= image_tag "alex.jpg", class: "avatar", alt: "avatar" %>
+          <%= image_tag "max.jpg", class: "avatar", alt: "avatar" %>
         </div>
       </div>
     </div>
