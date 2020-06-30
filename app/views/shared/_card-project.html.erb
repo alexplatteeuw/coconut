@@ -3,7 +3,7 @@
   </div>
   <div class="badges">
     <% project.skill_list.each do |skill| %>
-      <span class="badge badge-<%= %w(primary secondary success warning info).sample %>">
+      <span class="badge badge-primary %>">
         <%= skill %>
       </span>
     <% end %>
@@ -27,5 +27,13 @@
       <%= image_tag "alex.jpg", class: "avatar", alt: "avatar" %>
       <%= image_tag "max.jpg", class: "avatar", alt: "avatar" %>
     </div>
+
+    <%= link_to favorite_project_path(project) do %>
+      <% if current_user.favorited?(project) && current_user.admin %>
+        <i class="fas fa-star"></i>
+      <% elsif current_user.admin %>
+        <i class="far fa-star"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
