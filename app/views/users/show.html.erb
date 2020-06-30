@@ -1,0 +1,7 @@
+<%= current_user.first_name %>
+
+<% if current_user.admin %>
+  <%= render "admin-show" %>
+<% else %>
+  <%= render "user-show" %>
+<% end %>
