@@ -1,13 +1,24 @@
+
+.badge {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.badges {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
 .card-category {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 
-<<<<<<< Updated upstream
-=======
+}
+
 .card-image {
   background-size: cover;
   background-position: center;
   height: 200px;
->>>>>>> Stashed changes
 }
 
 .card-category .card-image {
