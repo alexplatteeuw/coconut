@@ -8,4 +8,12 @@ class ProjectPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def favorite?
+    user.admin?
+  end
+
+  def favorites?
+    user.admin?
+  end
 end
