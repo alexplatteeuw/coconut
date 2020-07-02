@@ -43,7 +43,7 @@ project.save!
 
 project = Project.new
 project.name = "Plateforme interne"
-project.description = "Plateforme pour gérer nos adhérents"
+project.description = "Plateforme pour gérer nos adhérents Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
 project.address = "34 avenue Jean Jaurès"
 project.charity = Charity.last
 project.tag_list = "informatique, développement, long, intranet"
