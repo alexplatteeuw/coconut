@@ -7,6 +7,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def favorites
+    @projects = policy_scope(Project).order(created_at: :desc)
+    authorize @projects
+  end
+
   def show
     @project = Project.find(params[:id])
     authorize @project
