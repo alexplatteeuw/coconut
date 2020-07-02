@@ -12,4 +12,8 @@ class ProjectPolicy < ApplicationPolicy
   def favorite?
     user.admin?
   end
+
+  def favorites?
+    user.admin?
+  end
 end
