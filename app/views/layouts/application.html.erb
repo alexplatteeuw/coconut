@@ -13,12 +13,9 @@
 
   <body>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/banner' %>
     <div class="d-flex">
-      <%= render 'shared/sidebar' %>
       <div class="container">
-        <div class="pt-5">
-          <%= render 'shared/search-bar' %>
-        </div>
         <%= yield %>
       </div>
     </div>
