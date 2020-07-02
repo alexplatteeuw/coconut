@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Projects</h1>
+    <div class="cards">
+      <% projects.each do |project| %>
+        <%= render "shared/card-project", project: project %>
+      <% end %>
+    </div>
+</div>
