@@ -11,4 +11,16 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
   end
+
+  def favorite
+    @user = current_user
+    @project = Project.find(params[:id])
+    authorize @project
+    if @user.favorited?(@project)
+      @user.unfavorite(@project)
+    else
+      @user.favorite(@project)
+    end
+    redirect_to projects_path
+  end
 end
