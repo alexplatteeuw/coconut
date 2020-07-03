@@ -5,6 +5,3 @@
 <% else %>
   <%= render "user-show" %>
 <% end %>
-
-<%= pie_chart User.group(:first_name).count %>
-
