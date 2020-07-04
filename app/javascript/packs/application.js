@@ -31,12 +31,15 @@ console.log("hello")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
+import { adminCharts } from '../pluggins/charts.js';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  adminCharts();
 
   $(document).ready(function () {
 

@@ -6,5 +6,10 @@
   <%= render "user-show" %>
 <% end %>
 
-<%= pie_chart User.group(:first_name).count %>
+
+<div class="charts-container">
+
+<canvas id="UserChart"></canvas>
+
+</div>
 
