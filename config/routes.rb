@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects, only: [:index, :show] do
+    resources :reservations, only: [:create]
     member do
       get 'favorite', to: 'projects#favorite'
     end
   end
 
+  get 'my-projects', to: 'projects#myprojects'
   get 'favorites', to: 'projects#favorites'
   get 'profile', to: 'users#show'
 
