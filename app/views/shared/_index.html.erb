@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="py-5">
+    <%= render "shared/search-bar" %>
+  </div>
+  <h1>Projects</h1>
+    <div class="cards">
+      <% projects.each do |project| %>
+        <%= render "shared/card-project", project: project %>
+      <% end %>
+    </div>
+</div>

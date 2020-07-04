@@ -1,19 +1,32 @@
 class ProjectsController < ApplicationController
   def index
+    skip_policy_scope
     if params[:q].present?
       @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
     else
-      @projects = policy_scope(Project).order(created_at: :desc)
+      if current_user.admin?
+        @projects = policy_scope(Project).order(created_at: :desc)
+      else
+        @projects = current_user.company.all_favorited
+      end
     end
   end
 
   def favorites
-    @projects = policy_scope(Project).order(created_at: :desc)
-    authorize @projects
+    # skip_authorization
+    authorize Project.new
+    @projects = current_user.company.all_favorited
+  end
+
+  def myprojects
+    authorize Project.new
+    @projects = current_user.projects
   end
 
   def show
     @project = Project.find(params[:id])
+    @user = current_user
+    @reservation = Reservation.new
     authorize @project
   end
 
@@ -21,11 +34,11 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project = Project.find(params[:id])
     authorize @project
-    if @user.favorited?(@project)
-      @user.unfavorite(@project)
+    if @user.company.favorited?(@project)
+      @user.company.unfavorite(@project)
     else
-      @user.favorite(@project)
+      @user.company.favorite(@project)
     end
-    redirect_to projects_path
+    redirect_to request.referrer
   end
 end

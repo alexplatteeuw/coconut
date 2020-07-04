@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_07_04_094417) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +91,17 @@ ActiveRecord::Schema.define(version: 2020_07_04_094417) do
     t.index ["charity_id"], name: "index_projects_on_charity_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_reservations_on_project_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -128,7 +140,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_094417) do
     t.string "first_name"
     t.string "last_name"
     t.string "address"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.text "description"
     t.bigint "company_id"
     t.index ["company_id"], name: "index_users_on_company_id"
@@ -140,6 +152,8 @@ ActiveRecord::Schema.define(version: 2020_07_04_094417) do
   add_foreign_key "bookings", "projects"
   add_foreign_key "bookings", "users"
   add_foreign_key "projects", "charities"
+  add_foreign_key "reservations", "projects"
+  add_foreign_key "reservations", "users"
   add_foreign_key "taggings", "tags"
   add_foreign_key "users", "companies"
 end
