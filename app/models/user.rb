@@ -18,4 +18,8 @@ class User < ApplicationRecord
     end
   end
 
+  def self.with_reservations
+    User.joins(:reservations).group("users.id")
+  end
+
 end

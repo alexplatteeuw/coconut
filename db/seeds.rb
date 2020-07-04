@@ -56,6 +56,7 @@ project.tag_list = "informatique, développement, long, intranet"
 project.skill_list = "Python, React, JS, CSS, Ruby"
 project.save!
 
+
 puts "Drop company db"
 Company.destroy_all
 
@@ -92,3 +93,8 @@ user.address = "25 rue du javelot, 75013"
 user.skill_list = "CSS, JS, Setup"
 user.company = Company.first
 user.save!
+
+reservation = Reservation.new
+reservation.user = user
+reservation.project = project
+reservation.save!
