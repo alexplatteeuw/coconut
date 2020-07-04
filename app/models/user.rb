@@ -8,5 +8,4 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :address, presence: true
   validates :admin, :inclusion => { in: [true, false] }
 
-  acts_as_favoritor
 end
