@@ -1,5 +1,7 @@
-<div id="container">
-  <div id="sidebar-container">
+
+<div id="sidebar">
+  <div id="container">
+    <div id="sidebar-container">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
           <%= link_to 'Home', root_path %>
@@ -17,5 +19,14 @@
           <%= link_to 'Mes documents', root_path %>
         </li>
       </ul>
+    </div>
   </div>
 </div>
+
+
+<div>
+  <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+    <i class="fas fa-align-left"></i>
+  </button>
+</div>
+

@@ -8,8 +8,9 @@ class ProjectsController < ApplicationController
   end
 
   def favorites
-    @projects = policy_scope(Project).order(created_at: :desc)
-    authorize @projects
+    # skip_authorization
+    authorize Project.new
+    @projects = current_user.company.all_favorited
   end
 
   def show
@@ -21,10 +22,10 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project = Project.find(params[:id])
     authorize @project
-    if @user.favorited?(@project)
-      @user.unfavorite(@project)
+    if @user.company.favorited?(@project)
+      @user.company.unfavorite(@project)
     else
-      @user.favorite(@project)
+      @user.company.favorite(@project)
     end
     redirect_to projects_path
   end

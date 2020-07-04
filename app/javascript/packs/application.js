@@ -27,6 +27,7 @@ console.log("hello")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+
 // External imports
 import "bootstrap";
 
@@ -37,4 +38,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 
+  $(document).ready(function () {
+
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+
+  });
 });
