@@ -19,6 +19,11 @@ charity.name = "Médecins sans frontières"
 charity.description = "depuis plus de 45 ans, Médecins Sans Frontières apporte une assistance médicale à des populations dont la vie ou la santé est menacée par des conflits armés, des épidémies, des pandémies ou des catastrophes naturelles."
 charity.save!
 
+charity = Charity.new
+charity.name = "La Croix Rouge"
+charity.description = "La Croix-Rouge française est une association d'aide humanitaire française fondée en 1864. Elle a pour objectif de venir en aide aux personnes en difficulté en France et à l'étranger. Ses missions fondamentales sont l'urgence, le secourisme, l'action sociale, la formation, la santé et l'action internationale."
+charity.save!
+
 puts 'destroy projects db'
 Project.destroy_all
 
@@ -38,15 +43,15 @@ project = Project.new
 project.name = "Refonte du cadre juridique"
 project.description = "On a des problèmmes juridiques, help !!!"
 project.address = "4 Cité d'Hauteville 75010"
-project.image_url = ""
-project.video_url = ""
+project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4f/Croix-Rouge_fran%C3%A7aise_Logo.svg/1200px-Croix-Rouge_fran%C3%A7aise_Logo.svg.png"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593871783/Que%CC%82te_Croix-Rouge_franc%CC%A7aise_2017_amqoce.mp4"
 project.charity = Charity.first
 project.tag_list = "juridique, long"
 project.skill_list = "Droit"
 project.save!
 
 project = Project.new
-project.name = "Plateforme interne"
+project.name = "Plateforme applicative interne"
 project.description = "Plateforme pour gérer nos adhérents Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
 project.address = "34 avenue Jean Jaurès"
 project.image_url = ""
