@@ -1,6 +1,4 @@
-<h3>Employés travaillant sur le projet :</h3>
-
-<div class="d-flex flex-row mt-3">
+<!-- <div class="d-flex flex-row mt-3">
   <% @employees.each do |employee| %>
     <div class="card-employee m-2 bg-light">
       <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
@@ -18,5 +16,12 @@
       </ul>
     </div>
   <% end %>
-</div>
+</div> -->
 
+<div class="d-flex flex-row mt-3">
+  <% @employees.each do |employee| %>
+    <div class="d-flex justify-content-start">
+      <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
+    </div>
+  <% end %>
+</div>
