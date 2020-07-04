@@ -29,6 +29,7 @@ console.log("hello")
 
 
 // External imports
+import  {setFlatPickr} from "../plugins/flatpickr"
 import "bootstrap";
 
 
@@ -42,6 +43,8 @@ document.addEventListener('turbolinks:load', () => {
   adminCharts();
 
   $(document).ready(function () {
+
+    setFlatPickr();
 
       $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
