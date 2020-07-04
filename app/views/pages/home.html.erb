@@ -1,10 +1,9 @@
 <%= render 'shared/banner' %>
 
 <h1>Nos projects en cours</h1>
-  <div class="cards">
+  <div class="container">
     <% @projects.each do |project| %>
       <%= render 'shared/card-description', project: project %>
-      <%= render "shared/card-project", project: project %>
     <% end %>
   </div>
 

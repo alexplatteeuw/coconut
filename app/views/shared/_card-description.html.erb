@@ -23,26 +23,29 @@
           <div class="card-extra-info">
               <div class="row">
                   <div class="col-sm-12">
-                          <div class="release-date"><span>May</span><br>2019</div>
+                    <div class="release">
+                      <div class="img">
+                       <div class="lazy-1-1 no-bg reveal-img animated d-flex flex-row">
+                          <%= image_tag "clem.jpg", class: "avatar", alt: "avatar", height: "32", width: "32"%>
+                          <%= image_tag "alex.jpg", class: "no-scale ls-is-cached lazyloaded avatar", alt: "avatar", height: "32", width: "32" %>
+                          <%= image_tag "max.jpg", class: "no-scale ls-is-cached lazyloaded avatar", alt: "avatar", height: "32", width: "32" %>
+                        </div>
                       </div>
-                      <div class="maturity">
-                          <ul>
-                              <li class=""><span></span></li>
-                              <li class=""><span></span></li>
-                              <li class="current sdg-6"><span></span></li>
-                              <li class=""><span></span></li>
-                              <li class=""><span></span></li>
-                          </ul>
-                      </div>
+                    </div>
+                    <div>
+                      <span><strong><%= project.charity.name %></strong></span>
+                    </div>
                   </div>
               </div>
           </div>
-          <p class="card-title title title-h5">Nouveau projet</p>
-          <p class="card-subtitle">Les Restos du Coeur</p>
+      </div>
+          <p class="card-title title title-h5"><%= project.name %></p>
+          <p class="card-subtitle"><%= project.description %></p>
           <div class="sdgs-list">
               <ul>
-                  <li><span class="inner bg-sdg-6">sdg 6.</span></li>
-                  <li><span class="inner bg-sdg-7">sdg 7.</span></li>
+                <% project.skill_list.each do |skill| %>
+                  <li><span class="inner badge badge-primary"><%= skill %></span></li>
+                <% end %>
               </ul>
           </div>
           <div class="card-view-more"><span><%= link_to "Détails", project_path(project), class: "text-secondary" %></span>
