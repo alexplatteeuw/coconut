@@ -26,6 +26,10 @@ gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'acts_as_favoritor'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary', '~> 1.12.0'
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

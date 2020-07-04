@@ -1,14 +1,48 @@
 <div class="container">
-  <h2><%= @project.name %> </h2>
-  <p><%= @project.description%></p>
-  <h3>Skills needed:</h3>
-  <ul>
-    <% @project.skills.each do |skill| %>
-    <li>
-      <%= skill.name %>
-    </li>
-    <% end %>
-  </ul>
+
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src=<%= @project.video_url %> type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-5"><%= @project.name %></h1>
+        <p class="lead text-white mb-0">👉 <%= @project.charity.name %> <%= image_tag @project.image_url, height: 50, crop: :fill %></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="row justify-content-around">
+
+    <div class="col-6">
+      <div class="mt-3">
+        <h3>Description:</h3>
+        <div class="border rounded bg-white">
+          <p><%= @project.description%></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div>
+      <div class="mt-3">
+        <h3>Compétences:</h3>
+      </div>
+      <div class="border text-center rounded">
+        <ul>
+          <% @project.skills.each do |skill| %>
+          <li>
+            <%= skill.name %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <a class="mt-5 btn btn-flat btn-primary btn-lg" href="#">Participer</a>
+    </div>
+  </div>
 </div>
 
   <div class="container widget-content" data-unavailable="<%= @user.unavailable_dates.to_json %>">
@@ -18,3 +52,4 @@
     <%= f.button :submit, "Réserver", class: "btn btn-outline-dark float-right mt-2" %>
     <% end %>
   </div>
+
