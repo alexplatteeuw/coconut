@@ -4,7 +4,7 @@
   <div class="badges">
     <% project.skill_list.each do |skill| %>
       <span class="badge badge-primary %>">
-        <%= skill %>
+        <%= link_to skill, tagged_path(tag: skill) %>
       </span>
     <% end %>
   </div>

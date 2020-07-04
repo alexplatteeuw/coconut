@@ -3,12 +3,12 @@ class ProjectsController < ApplicationController
     skip_policy_scope
     if params[:q].present?
       @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
+    elsif params[:tag].present?
+      @projects = policy_scope(Project).tagged_with(params[:tag])
+    elsif current_user.admin?
+      @projects = policy_scope(Project).order(created_at: :desc)
     else
-      if current_user.admin?
-        @projects = policy_scope(Project).order(created_at: :desc)
-      else
-        @projects = current_user.company.all_favorited
-      end
+      @projects = current_user.company.all_favorited
     end
   end
 
@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @user = current_user
+    @employees = @user.company.users
     @reservation = Reservation.new
     authorize @project
   end
