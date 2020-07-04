@@ -2,25 +2,21 @@
 
 <div class="d-flex flex-row mt-3">
   <% @employees.each do |employee| %>
-      <div class="card-employee m-2 bg-light">
-        <div>
-          <p>
-            <%= "#{employee.first_name} #{employee.last_name}" %>
-          </p>
-        </div>
-        <div>
-          <p>
-            <%= "#{employee.address}" %>
-          </p>
-        </div>
-        <div>
-          <p>Compétences de l'employé :</p>
-          <ul>
-            <% employee.skill_list.each do |skill| %>
-              <li><%= skill %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
+    <div class="card-employee m-2 bg-light">
+      <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
+      <p>
+        <%= "#{employee.first_name} #{employee.last_name}" %>
+      </p>
+      <p>
+        <%= "#{employee.address}" %>
+      </p>
+      <p>Compétences de l'employé :</p>
+      <ul>
+        <% employee.skill_list.each do |skill| %>
+          <li><%= skill %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 </div>
+
