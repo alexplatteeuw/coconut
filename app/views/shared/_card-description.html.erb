@@ -1,0 +1,54 @@
+<div class="col-sm-6 col-lg-4 col-xxl-3  m-b-i">
+  <a class="card card-solution-test bg-white reveal-block" href="http://localhost:3000/projects/3" style="min-height: 371px;">
+      <div class="card-header">
+          <figure class="hover-caption lazy-container lazy-16-9 reveal-img animated">
+              <div class="btn-animated-border animated-next">
+                  <div class="icon w-50">
+                      <svg class="bordered" width="52" height="52" viewBox="0 0 52 52">
+                          <circle cx="26" cy="26" r="25" fill="none" stroke="#ffffff" stroke-width="1.2"></circle>
+                      </svg>
+                      <i class="fas fa-long-arrow-right"></i>
+                  </div>
+              </div>
+              <img class=" ls-is-cached lazyloaded" data-src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="" src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
+              <div class="sdgs">
+                  <ul>
+                      <li><span class="inner bg-sdg-6"></span></li>
+                      <li><span class="inner bg-sdg-7"></span></li>
+                  </ul>
+              </div>
+          </figure>
+      </div>
+      <div class="card-body d-flex flex-column">
+          <div class="card-extra-info">
+              <div class="row">
+                  <div class="col-sm-12">
+                    <div class="release">
+                      <div class="img">
+                       <div class="lazy-1-1 no-bg reveal-img animated d-flex flex-row">
+                          <%= image_tag "clem.jpg", class: "avatar", alt: "avatar", height: "32", width: "32"%>
+                          <%= image_tag "alex.jpg", class: "no-scale ls-is-cached lazyloaded avatar", alt: "avatar", height: "32", width: "32" %>
+                          <%= image_tag "max.jpg", class: "no-scale ls-is-cached lazyloaded avatar", alt: "avatar", height: "32", width: "32" %>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <span><strong><%= project.charity.name %></strong></span>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+          <p class="card-title title title-h5"><%= project.name %></p>
+          <p class="card-subtitle"><%= project.description %></p>
+          <div class="sdgs-list">
+              <ul>
+                <% project.skill_list.each do |skill| %>
+                  <li><span class="inner badge badge-primary"><%= skill %></span></li>
+                <% end %>
+              </ul>
+          </div>
+          <div class="card-view-more"><span><%= link_to "Détails", project_path(project), class: "text-secondary" %></span>
+          </div>
+  </a>
+</div>
