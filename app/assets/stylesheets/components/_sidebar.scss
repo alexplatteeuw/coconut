@@ -25,3 +25,11 @@ ul {
   position: sticky;
   top: 0;
 }
+
+#sidebar.active {
+  margin-left: -200px;
+}
+
+// #sidebar {
+//   position: sticky;
+// }
