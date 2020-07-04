@@ -5,4 +5,5 @@ class Project < ApplicationRecord
   validates :name, :address, :description, presence: true
 
   acts_as_favoritable
+
 end

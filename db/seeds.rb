@@ -16,7 +16,7 @@ charity.save!
 
 charity = Charity.new
 charity.name = "Médecins sans frontières"
-charity.description = "epuis plus de 45 ans, Médecins Sans Frontières apporte une assistance médicale à des populations dont la vie ou la santé est menacée par des conflits armés, des épidémies, des pandémies ou des catastrophes naturelles."
+charity.description = "depuis plus de 45 ans, Médecins Sans Frontières apporte une assistance médicale à des populations dont la vie ou la santé est menacée par des conflits armés, des épidémies, des pandémies ou des catastrophes naturelles."
 charity.save!
 
 puts 'destroy projects db'
@@ -24,9 +24,11 @@ Project.destroy_all
 
 puts 'Creating 3 new projects'
 project = Project.new
-project.name = "Site internet"
-project.description ="Je veux refaire mon site"
+project.name = "Refonte du site internet"
+project.description ="Le site internet des restos du coeur enregistre + de 10k visiteurs / jours. Pour coller à notre nouvelle imagne et notre nouvelle charte graphique nous souhaiterions être accompagnés pour la refonte de celui-ci. Nous recherchons des développeurs séniors qui peuvent nous accompagner et nous guider. Il faut que nos équipes en interne puisse lire ce code et mettre à jour le site. Le télétravail est possible mais nous préférerions une présence physique."
 project.address = "4 Cité d'Hauteville 75010"
+project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos_du_coeur_Logo.svg/1200px-Restos_du_coeur_Logo.svg.png"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.first
 project.tag_list = "informatique, développement, moyen, web"
 project.skill_list = "CSS, JS, Ruby"
@@ -36,6 +38,8 @@ project = Project.new
 project.name = "Refonte du cadre juridique"
 project.description = "On a des problèmmes juridiques, help !!!"
 project.address = "4 Cité d'Hauteville 75010"
+project.image_url = ""
+project.video_url = ""
 project.charity = Charity.first
 project.tag_list = "juridique, long"
 project.skill_list = "Droit"
@@ -45,6 +49,8 @@ project = Project.new
 project.name = "Plateforme interne"
 project.description = "Plateforme pour gérer nos adhérents Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
 project.address = "34 avenue Jean Jaurès"
+project.image_url = ""
+project.video_url = ""
 project.charity = Charity.last
 project.tag_list = "informatique, développement, long, intranet"
 project.skill_list = "Python, React, JS, CSS, Ruby"
