@@ -16,4 +16,8 @@ class ProjectPolicy < ApplicationPolicy
   def favorites?
     user.admin?
   end
+
+  def myprojects?
+    true
+  end
 end

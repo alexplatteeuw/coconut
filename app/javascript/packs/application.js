@@ -24,6 +24,7 @@ require("channels")
 
 
 // External imports
+import  {setFlatPickr} from "../plugins/flatpickr"
 import "bootstrap";
 
 // Internal imports, e.g:
@@ -33,6 +34,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   $(document).ready(function () {
+
+    setFlatPickr();
 
       $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
