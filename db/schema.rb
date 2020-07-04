@@ -141,11 +141,8 @@ ActiveRecord::Schema.define(version: 2020_07_04_140923) do
     t.boolean "admin", default: false
     t.text "description"
     t.bigint "company_id"
-
-    t.integer "credits"
-
     t.string "avatar_url"
-
+    t.integer "credits"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
