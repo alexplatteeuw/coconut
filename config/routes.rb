@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects, only: [:index, :show] do
-    resources :reservations, only: [:create]
+    resources :reservations, only: [:create, :new]
     member do
       get 'favorite', to: 'projects#favorite'
     end
