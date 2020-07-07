@@ -1,23 +1,34 @@
-const adminCharts = () => {
-
-  console.log("je suis à l'interieur")
-
-      const UserChartTarget = document.getElementById('UserChart');
-      const data = JSON.parse(UserChartTarget.dataset.userChart);
-
-
-      const UserChart = new Chart(UserChartTarget, {
-        type: 'doughnut',
-        data: data,
-        options: {
-          maintainAspectRatio: false,
-          aspectRatio: 1,
-        }
-      });
-
+const userChart = () => {
+  const UserChartTarget = document.getElementById('user-chart');
+  const data = JSON.parse(UserChartTarget.dataset.userChart);
+  new Chart(UserChartTarget, {
+    type: 'doughnut',
+    data: data,
+    options: {
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+    }
+  });
 }
+
+const skillsChart = () => {
+  const SkillsChartTarget = document.getElementById('skills-chart');
+  // console.log(SkillsChartTarget);
+  const data = JSON.parse(SkillsChartTarget.dataset.skillsChart);
+  new Chart(SkillsChartTarget, {
+    type: 'pie',
+    data: data,
+    options: {
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+    }
+  });
+}
+
+
+const adminCharts = () => {
+ userChart();
+ skillsChart();
+}
+
 export { adminCharts };
-
-  console.log("je suis à l'exterieur")
-
-//UserBookingData

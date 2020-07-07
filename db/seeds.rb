@@ -30,7 +30,6 @@ project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.first
 project.tag_list = "informatique, développement, moyen, web"
-project.skill_list = "CSS, JS, Ruby"
 project.save!
 
 project = Project.new
@@ -41,7 +40,6 @@ project.image_url = ""
 project.video_url = ""
 project.charity = Charity.first
 project.tag_list = "juridique, long"
-project.skill_list = "Droit"
 project.save!
 
 project = Project.new
@@ -52,7 +50,6 @@ project.image_url = ""
 project.video_url = ""
 project.charity = Charity.last
 project.tag_list = "informatique, développement, long, intranet"
-project.skill_list = "Python, React, JS, CSS, Ruby"
 project.save!
 
 puts "Drop company db"
