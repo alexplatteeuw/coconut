@@ -20,4 +20,9 @@ class ProjectPolicy < ApplicationPolicy
   def myprojects?
     true
   end
+
+  def completedprojects?
+    true
+  end
+
 end

@@ -3,6 +3,5 @@ class Company < ApplicationRecord
 
   validates :name, :address, presence: true
 
-
   acts_as_favoritor
 end

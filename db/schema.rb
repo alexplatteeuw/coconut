@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_184108) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "logo"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -141,6 +142,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_184108) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_url"
     t.string "video_url"
+    t.string "status", default: "unstarted"
     t.index ["charity_id"], name: "index_projects_on_charity_id"
   end
 
