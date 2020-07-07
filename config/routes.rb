@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   get 'my-projects', to: 'projects#myprojects'
+  get 'completed-projects', to: 'projects#completedprojects'
   get 'favorites', to: 'projects#favorites'
   get 'profile', to: 'users#show'
   get 'tagged', to: "projects#index", as: :tagged
