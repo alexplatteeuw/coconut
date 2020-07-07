@@ -42,4 +42,9 @@ class ProjectsController < ApplicationController
     end
     redirect_to request.referrer
   end
+
+  def completedprojects
+    authorize Project.new
+    @projects = current_user.projects
+  end
 end
