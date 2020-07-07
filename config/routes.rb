@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'my-projects', to: 'projects#myprojects'
   get 'favorites', to: 'projects#favorites'
-  get 'profile', to: 'users#show'
+  get 'dashboard', to: 'users#show'
   get 'tagged', to: "projects#index", as: :tagged
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
