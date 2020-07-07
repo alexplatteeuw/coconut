@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   acts_as_taggable_on :tags
 
   validates :name, :address, :description, presence: true
+  validates :status, :inclusion => {in: ['unstarted', 'current', 'completed'] }, presence: true
 
   acts_as_favoritable
 end
