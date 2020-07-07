@@ -39,9 +39,10 @@ document.addEventListener('turbolinks:load', () => {
 
     adminCharts();
     initSelect2();
+    // setFlatPickr();
 
-   $('#sidebarCollapse').on('click', function () {
-     $('#sidebar').toggleClass('active');
-     });
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
   });
 });

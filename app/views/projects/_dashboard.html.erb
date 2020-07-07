@@ -1,0 +1,62 @@
+<div class="container d-flex flex-column">
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+       <li class="nav-item">
+         <a class="nav-link active text-secondary" id="leprojet-tab" data-toggle="tab" href="#leprojet" role="tab" aria-controls="leprojet" aria-selected="true">Le projet</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-secondary" id="home-tab" data-toggle="tab" href="#resume" role="tab" aria-controls="home" aria-selected="false">Vue d'ensemble</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-secondary" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-secondary" id="profile-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="profile" aria-selected="false">Calendrier</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-secondary" id="messenger-tab" data-toggle="tab" href="#messenger" role="tab" aria-controls="messenger" aria-selected="false">Messagerie</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-secondary" id="ressources-tab" data-toggle="tab" href="#ressources" role="tab" aria-controls="ressources" aria-selected="false">Ressources</a>
+       </li>
+    </ul>
+  </div>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="resume" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container ">
+        <%= render 'projects/resume', project: project, employees: employees %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="roadmap" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container ">
+        <p>Roadmap</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="calendar" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container">
+        <%= render 'projects/calendar', project: project, employees: employees %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="messenger" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container">
+        <p>Messagerie</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="ressources" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container">
+        <p>Ressources</p>
+      </div>
+    </div>
+
+     <div class="tab-pane fade show active" id="leprojet" role="tabpanel" aria-labelledby="leprojet-tab">
+      <div class="container">
+        <%= render 'projects/basic-show', project: project, employees: employees %>
+      </div>
+    </div>
+  </div>
+</div>
