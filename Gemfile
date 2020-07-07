@@ -25,7 +25,6 @@ gem 'pundit'
 gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'acts_as_favoritor'
-gem 'chartkick'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
