@@ -1778,6 +1778,11 @@ chartjs-color@^2.1.0:
     chartjs-color-string "^0.6.0"
     color-convert "^1.9.3"
 
+chartkick@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/chartkick/-/chartkick-3.2.0.tgz#5296bbadfa6fbb93d3ab0f9c8e5d27649860e806"
+  integrity sha512-EkscIyDBdtUJVIuA2kIIjMq+YkNf4jDWr1fYjDUMZ9IakIJFoJ+9Hl+PW/POutElu8iYbebCEHWsrsXu09o4hw==
+
 chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
@@ -3365,6 +3370,11 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
+
+highcharts@^8.1.2:
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-8.1.2.tgz#a4e7d74a6140028e676a3a54f5fd0ea6ccbcc90e"
+  integrity sha512-Q124Lj+2+bVY2MKMd7d8uSVAmhZVzWgknUUzUBEC27S94dCyK6PBgahuwiMP/ET4w7qSFBBi4OC77ZUb0Vnuyg==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
