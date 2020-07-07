@@ -1,5 +1,6 @@
 puts 'Cleaning DB ...'
 
+Reservation.destroy_all
 Charity.destroy_all
 Project.destroy_all
 Company.destroy_all
