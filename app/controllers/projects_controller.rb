@@ -45,6 +45,6 @@ class ProjectsController < ApplicationController
 
   def completedprojects
     authorize Project.new
-    @projects = current_user.projects
+    @projects = current_user.projects.where(status: :unstarted)
   end
 end
