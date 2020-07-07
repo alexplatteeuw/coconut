@@ -23,6 +23,7 @@ require("channels")
 
 
 // External imports
+import {initSelect2} from "../plugins/init_select2"
 import  {setFlatPickr} from "../plugins/flatpickr"
 import "bootstrap";
 
@@ -35,19 +36,23 @@ import initChart from "../plugins/initChart";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-<<<<<<< HEAD
+
   adminCharts();
 
   $(document).ready(function () {
 
+
   setFlatPickr();
+
+    initSelect2();
+    setFlatPickr();
+
 
    $('#sidebarCollapse').on('click', function () {
      $('#sidebar').toggleClass('active');
      });
 
   });
-=======
+
   initChart();
->>>>>>> f14b323c8e95281354fa3c7e494c3d3e64a72f8a
 });

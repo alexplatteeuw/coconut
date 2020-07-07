@@ -12,11 +12,11 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :address, presence: true
   validates :admin, :inclusion => { in: [true, false] }
 
-  def unavailable_dates
-    reservations.pluck(:start_date, :end_date).map do |range|
-      { from: range[0], to: range[1] }
-    end
-  end
+  # def unavailable_dates
+  #   reservations.pluck(:start_date, :end_date).map do |range|
+  #     { from: range[0], to: range[1] }
+  #   end
+  # end
 
   def self.with_reservations
     User.joins(:reservations).group("users.id")

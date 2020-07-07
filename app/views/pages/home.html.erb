@@ -1,3 +1,10 @@
 <%= render 'shared/banner' %>
-
+<div class="container">
+  <h1 class="pb-3">Nos projects en cours</h1>
+  <div class="d-flex flex-row">
+    <% @projects.each do |project| %>
+      <%= render 'shared/card-description', project: project %>
+    <% end %>
+  </div>
+</div>
 
