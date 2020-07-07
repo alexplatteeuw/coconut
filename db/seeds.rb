@@ -54,9 +54,15 @@ project.tag_list = "informatique, développement, long, intranet"
 project.skill_list = "Python, React, JS, CSS, Ruby"
 project.save!
 
+<<<<<<< HEAD
+
+puts "Drop company db"
+Company.destroy_all
+=======
 puts 'Projects created!'
 
 puts 'Creating a company...'
+>>>>>>> fb979b44d97c71f6a27ae3b4fa21c412e7781252
 
 company = Company.new
 company.name = "Le Wagon"
@@ -91,4 +97,11 @@ user.company = Company.first
 user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
 user.save!
 
+
+reservation = Reservation.new
+reservation.user = user
+reservation.project = project
+reservation.save!
+
 puts 'Users created!'
+
