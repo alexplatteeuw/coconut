@@ -60,7 +60,7 @@ puts 'Projects created!'
 puts 'Creating a company...'
 
 company = Company.new
-company.name = "Le Wagon"
+company.name = "Coconut"
 company.address = "16 villa Gaudelet"
 company.save!
 
