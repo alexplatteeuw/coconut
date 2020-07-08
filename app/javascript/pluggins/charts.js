@@ -1,7 +1,7 @@
 const userChart = () => {
-  const UserChartTarget = document.getElementById('user-chart');
-  const data = JSON.parse(UserChartTarget.dataset.userChart);
-  new Chart(UserChartTarget, {
+  const userChartTarget = document.getElementById('user-chart');
+  const data = JSON.parse(userChartTarget.dataset.userChart);
+  new Chart(userChartTarget, {
     type: 'doughnut',
     data: data,
     options: {
@@ -12,9 +12,9 @@ const userChart = () => {
 }
 
 const skillsChart = () => {
-  const SkillsChartTarget = document.getElementById('skills-chart');
-  const data = JSON.parse(SkillsChartTarget.dataset.skillsChart);
-  new Chart(SkillsChartTarget, {
+  const skillsChartTarget = document.getElementById('skills-chart');
+  const data = JSON.parse(skillsChartTarget.dataset.skillsChart);
+  new Chart(skillsChartTarget, {
     type: 'pie',
     data: data,
     options: {
@@ -24,10 +24,23 @@ const skillsChart = () => {
   });
 }
 
+const projectsStatusChart = () => {
+  const projectsStatusChartTarget = document.getElementById('projects-status-chart');
+  const data = JSON.parse(projectsStatusChartTarget.dataset.projectsStatusChart);
+  new Chart(projectsStatusChartTarget, {
+    type: 'bar',
+    data: data,
+    options: {
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+    }
+  });
+}
 
 const adminCharts = () => {
   if (document.getElementById('user-chart')) { userChart() }
   if (document.getElementById('skills-chart')) { skillsChart() }
+  if (document.getElementById('projects-status-chart')) { projectsStatusChart() }
 }
 
 export { adminCharts };

@@ -1,17 +1,22 @@
-<div class="container">
-  <h1 class="p-3">Mon dashboard</h1>
-  <h3 class="p-3">Staffing Info</h3>
-  <div class="row">
+<div class="container pt-4">
+  <h3 class="p-4">Staffing Info</h3>
+  <div class="row pb-4">
     <div class="col">
-      <div>
+      <div class="chart-card">
         <canvas id="user-chart" data-user-chart= "<%= @data_users_availables %>"></canvas>
       </div>
     </div>
     <div class="col">
-      <div>
+      <div class="chart-card">
         <canvas id="skills-chart" data-skills-chart= "<%= @data_skills_availables %>"></canvas>
       </div>
     </div>
   </div>
-  <h3 class="p-3">Bilan</h3>
+  <h3 class="p-4">Statuts des projets</h3>
+  <div class="row">
+    <div class="col">
+      <div class="chart-card">
+        <canvas id="projects-status-chart" data-projects-status-chart= "<%= @data_projects_status %>"></canvas>
+      </div>
+    </div>
 </div>
