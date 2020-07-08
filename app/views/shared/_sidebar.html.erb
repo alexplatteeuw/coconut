@@ -2,7 +2,6 @@
   <div id="sidebar">
     <div id="sidebar-container">
 
-
       <div class="d-flex flex-column align-items-center">
         <div class="logosb my-3">
           <%= link_to current_user.company.name.upcase, root_path %>
@@ -11,7 +10,7 @@
         <% if current_user.admin? %>
           <p><%= current_user.first_name %></p>
           <p>-<%= current_user.job%>-</p>
-          <%= link_to 'Dashboard', dashboard_path, class:"btn btn-dashboard mb-4" %>
+          <%= link_to 'Dashboard', dashboard_path, class:"btn btn-dashboard my-4" %>
         <% end %>
       </div>
 
@@ -41,19 +40,20 @@
           <i class="icons pr-3 fa fa-ellipsis-h" aria-hidden="true"></i>
           <%= link_to 'Mes documents', root_path %>
         </li>
-        <li>
-          <% if current_user %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-          <% else %>
-          <%= link_to "Sign in", new_user_session_path %>
-          <% end %>
-        </li>
       </ul>
+
+      <div class="d-flex flex-column align-items-center">
+        <div class="pt-4" id="sign-out">
+          <% if current_user %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
 
     </div>
   </div>
-
-
 
   <div>
     <button type="button" id="sidebarCollapse" class="btn">
