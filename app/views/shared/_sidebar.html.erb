@@ -3,7 +3,7 @@
     <div id="sidebar-container">
 
       <div class="logosb">
-        <%= link_to 'COCONUT', root_path %>
+        <%= link_to current_user.company.name.upcase, root_path %>
       </div>
 
       <%= image_tag current_user.avatar_url, class: "avatar-sidebar", alt: "avatar" %>
