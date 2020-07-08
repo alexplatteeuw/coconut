@@ -22,6 +22,10 @@ a:active {
   color: $cocomediumgrey;
 }
 
+h4 {
+  color: $cocomediumgrey;
+}
+
 .logosb {
   font-weight: 600;
   font-size: 24px;
@@ -46,6 +50,39 @@ a:active {
   text-align: left;
 }
 
+ul.sidebar-brand {
+  list-style:none;
+  padding: 0px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.btn-dashboard {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $cocoblueprimary;
+  transition: background 0.3s ease;
+  width: 140px;
+}
+
+a:hover.btn-dashboard {
+  background: #2948f2;
+  color: white;
+}
+
+a:link.btn-dashboard {
+  color: white;
+}
+
+a:visited.btn-dashboard {
+  color: white;
+}
+
+a:active.btn-dashboard {
+  color: white;
+}
+
 #sidebar-container {
   background-color: $cocowhitebg;
   width: 200px;
@@ -58,9 +95,3 @@ a:active {
   margin-left: -200px;
 }
 
-ul.sidebar-brand {
-  list-style:none;
-  padding: 0px;
-  margin: 0 auto;
-  width: fit-content;
-}

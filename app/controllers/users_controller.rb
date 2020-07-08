@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       datasets: [{
         label: "Staffing employés",
         data: [user.count, user.count - user.joins(:reservations).group("users.id").length],
-        backgroundColor: ["hsla(218, 100%, 60%, 1)", "hsl(50, 5%, 83%)"]
+        backgroundColor: ["hsl(231, 91%, 58%)", "hsl(50, 5%, 83%)"]
       }],
       labels: ["Tous les employés", "Les employés disponibles pour une mission"]
     }
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       datasets: [{
         label: "Staffing employés",
         data: count,
-        backgroundColor: ["hsla(218, 100%, 60%, 1)", "hsl(50, 5%, 83%)"]
+        backgroundColor: ["hsl(231, 91%, 58%)", "hsl(50, 5%, 83%)"]
       }],
       labels: labels
     }
