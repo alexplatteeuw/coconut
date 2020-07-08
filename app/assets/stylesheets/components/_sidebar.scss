@@ -12,9 +12,14 @@
   color: $cocomediumgrey;
 }
 
+.fname {
+  color: cocodarkgrey;
+}
+
 .sidebar-brand {
   text-align: left;
 }
+
 a {
   color: $cocomediumgrey;
 }
@@ -47,6 +52,13 @@ ul.sidebar-brand {
   width: fit-content;
 }
 
+#avatar {
+  border-radius: 50%;
+  margin: -10px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 5px;
+}
 // #sidebar {
 //   position: sticky;
 // }
