@@ -4,27 +4,16 @@
 
 
       <div class="d-flex flex-column align-items-center">
-        <div class="logosb mt-3">
+        <div class="logosb my-3">
           <%= link_to current_user.company.name.upcase, root_path %>
         </div>
-        <%= image_tag current_user.avatar_url, class: "avatar-sidebar my-2", alt: "avatar" %>
+        <%= image_tag current_user.avatar_url, id: "avatar" %>
         <% if current_user.admin? %>
           <p><%= current_user.first_name %></p>
-            <%= link_to 'Dashboard', dashboard_path, class:"btn btn-dashboard mb-4" %>
+          <p>-<%= current_user.job%>-</p>
+          <%= link_to 'Dashboard', dashboard_path, class:"btn btn-dashboard mb-4" %>
         <% end %>
       </div>
-
-    <div class="d-flex justify-content-center">
-      <%= image_tag current_user.avatar_url, id: "avatar" %>
-    </div>
-
-    <div class="fname d-flex justify-content-center">
-      <p><%= current_user.first_name%></p>
-    </div>
-     <div class="fname d-flex justify-content-center">
-      <p>-<%= current_user.job%>-</p>
-    </div>
-
 
       <ul class="sidebar-brand">
         <li>
