@@ -1,7 +1,30 @@
+a {
+  color: $cocomediumgrey;
+}
+
+a:link {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
+a:visited {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
+a:active {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
 .logosb {
   font-weight: 600;
   font-size: 24px;
-  padding: 40px;
 }
 
 .logosb a {
@@ -12,17 +35,16 @@
   color: $cocomediumgrey;
 }
 
+.avatar-sidebar {
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 80px;
+  width: 80px;
+}
+
 .sidebar-brand {
   text-align: left;
 }
-a {
-  color: $cocomediumgrey;
-}
-
-a:hover {
-  color: #83848C;
-}
-
 
 #sidebar-container {
   background-color: $cocowhitebg;
@@ -36,17 +58,9 @@ a:hover {
   margin-left: -200px;
 }
 
-a:link {
-  text-decoration:none;
-}
-
 ul.sidebar-brand {
   list-style:none;
   padding: 0px;
   margin: 0 auto;
   width: fit-content;
 }
-
-// #sidebar {
-//   position: sticky;
-// }

@@ -13,7 +13,6 @@ const userChart = () => {
 
 const skillsChart = () => {
   const SkillsChartTarget = document.getElementById('skills-chart');
-  // console.log(SkillsChartTarget);
   const data = JSON.parse(SkillsChartTarget.dataset.skillsChart);
   new Chart(SkillsChartTarget, {
     type: 'pie',
@@ -27,8 +26,8 @@ const skillsChart = () => {
 
 
 const adminCharts = () => {
- userChart();
- skillsChart();
+  if (document.getElementById('user-chart')) { userChart() }
+  if (document.getElementById('skills-chart')) { skillsChart() }
 }
 
 export { adminCharts };

@@ -6,33 +6,41 @@
         <%= link_to 'COCONUT', root_path %>
       </div>
 
-        <ul class="sidebar-brand">
+      <%= image_tag current_user.avatar_url, class: "avatar-sidebar", alt: "avatar" %>
+
+      <ul class="sidebar-brand">
+        <li>
+          <i class="icons pr-3 fa fa-list" aria-hidden="true"></i>
+          <%= link_to 'Tous les projets', projects_path %>
+        </li>
+        <% if current_user.admin? %>
           <li>
-            <i class="icons pr-3 fa fa-list" aria-hidden="true"></i><%= link_to 'Tous les projets', projects_path %>
+            <i class="icons pr-3 fa fa-check" aria-hidden="true"></i>
+            <%= link_to 'Projets retenus', favorites_path %>
           </li>
-          <% if current_user.admin? %>
-            <li>
-              <i class="icons pr-3 fa fa-check" aria-hidden="true"></i><%= link_to 'Projets retenus', favorites_path %>
-            </li>
-          <% else %>
-            <li>
-              <i class="icons pr-3 fa fa-bookmark-o" aria-hidden="true"></i><%= link_to 'Mes projets', my_projects_path %>
-            </li>
-          <% end %>
-          <% if current_user.admin? %>
-            <li>
-              <i class="icons pr-3 fa fa-users" aria-hidden="true"></i><%= link_to 'Employés', root_path %>
-            </li>
-          <% end %>
+        <% else %>
           <li>
-            <i class="icons pr-3 fa fa-ellipsis-h" aria-hidden="true"></i><%= link_to 'Mes documents', root_path %>
+            <i class="icons pr-3 fa fa-bookmark-o" aria-hidden="true"></i>
+            <%= link_to 'Mes projets', my_projects_path %>
           </li>
-        </ul>
+        <% end %>
+        <% if current_user.admin? %>
+          <li>
+            <i class="icons pr-3 fa fa-users" aria-hidden="true"></i>
+            <%= link_to 'Employés', root_path %>
+          </li>
+        <% end %>
+        <li>
+          <i class="icons pr-3 fa fa-ellipsis-h" aria-hidden="true"></i>
+          <%= link_to 'Mes documents', root_path %>
+        </li>
+      </ul>
+
     </div>
   </div>
 
   <div>
-    <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+    <button type="button" id="sidebarCollapse" class="btn">
       <i class="fas fa-align-left"></i>
     </button>
   </div>
