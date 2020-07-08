@@ -57,8 +57,13 @@
   padding: 16px;
 }
 
+.card-product-infos p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
 .card-tags {
-  min-width: 100px;
+  min-width: 285px;
   height: 100%;
 }
 
