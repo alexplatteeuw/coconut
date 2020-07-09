@@ -131,3 +131,14 @@ ul.sidebar-brand {
   margin-bottom: 0px;
   color: $cocomediumgrey;
 }
+
+#sidebarCollapse {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  padding: 6px 6px;
+}
+
+#sidebar {
+  position: relative;
+}

@@ -1,60 +1,91 @@
+// PROJECT CARD
+
 .card-product {
   overflow: hidden;
-  height: 150px;
+  height: 175px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  display: flex;
   align-items: center;
   border-radius: 5px;
-  position: relative;
+  padding: 20px;
 }
 
-.card-product a {
-  color: white;
+.card-product i {
+  color: black;
 }
 
-.card-product a:link {
+// PROJECT CARD : LINKS
+
+.card-description-link a {
+  color: black;
+  font-size: 12px;
+  float: right;
+  margin: 10px 0px;
+}
+
+.card-description-link a:link {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-product a:visited {
+.card-description-link a:visited {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-product a:hover {
+.card-description-link a:hover {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-product a:active {
+.card-description-link a:active {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-image {
-  height: 100%;
-  min-width: 150px;
-  background-size: cover;
-  background-position: center;
+// PROJECT LOGO
+
+.card-logo {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 12px;
+  margin-left: 20px;
 }
+
+.card-logo img {
+  width: 100px;
+}
+
+// PROJECT TITLE
 
 .card-product h2 {
   font-size: 16px;
   margin: 0;
 }
 
-.card-product p {
+// PROJECT DESCRIPTION
+
+.card-description {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  // Keep description on 3 lines no matter what:
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
+.card-description-link {
+  color: black;
+}
+
+// PROJECT TITLE & DESCRIPTION
+
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 0 20px;
 }
 
 .card-product-infos p {
@@ -62,23 +93,43 @@
   line-height: 1.6;
 }
 
-.card-tags {
-  min-width: 285px;
-  height: 100%;
+.card-titles p {
+  margin: 0px;
+  font-size: 12px;
 }
 
-.badges {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+// PROJECT SKILLS
+
+.card-tags {
+  min-width: 250px;
+  height: 100%;
+  margin: 0px 16px;
+  padding: 16px 0px;
+}
+
+.card-tags p {
+  margin-bottom: 0px;
+  margin-left: 8px;
 }
 
 .badge {
-  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
   background: #DCE0F5;
   font-weight: 400;
-  padding: 0.50em 0.5em;
+  padding: 0.7em;
+  margin: 8px;
+  border-radius: 5px;
 }
+
+.project-figures {
+  font-size: 12px;
+}
+
+.project-figures span {
+  color: #0122DC;
+  font-weight: 500;
+}
+
+// PROJECT SKILLS : LINKS
 
 .badge a {
   text-decoration: none;
@@ -103,4 +154,13 @@
 .badge a:active {
   text-decoration: none;
   color: #0122DC;
+}
+
+// PROJECT CARD SEPARATOR
+
+.vertical-line {
+  width: 1px;
+  height: 80%;
+  background: $cocolightgrey;
+  border: none;
 }
