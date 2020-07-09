@@ -4,9 +4,12 @@
   </div>
   <div class="card-product-infos">
     <div class="d-flex flex-row justify-content-between">
-      <h2>
-        <%= project.name %>
-      </h2>
+      <div class="card-titles d-flex flex-column">
+        <h2>
+          <%= project.name %>
+        </h2>
+        <p><%= project.charity.name %></p>
+      </div>
       <%= link_to favorite_project_path(project) do %>
         <% if current_user.company.favorited?(project) && current_user.admin %>
           <i class="fas fa-star"></i>
@@ -24,13 +27,33 @@
   </div>
     <hr class="vertical-line"/>
   <div class="card-tags">
-    <p>Compétences</p>
-    <div class="d-flex flex-row">
-      <% project.tag_list.first(3).each do |tag| %>
-        <span class="badge">
-          <%= link_to tag.capitalize, tagged_path(tag: tag) %>
-        </span>
-      <% end %>
+    <div class="d-flex flex-column">
+      <div>
+        <p>Compétences</p>
+        <div class="d-flex flex-row">
+          <% project.tag_list.first(3).each do |tag| %>
+            <span class="badge">
+              <%= link_to tag.capitalize, tagged_path(tag: tag) %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <div class="d-flex flex-row justify-content-between mt-3">
+          <div>
+            <p>Délai</p>
+            <p class="project-figures">
+              <span>moyen</span> terme
+            </p>
+          </div>
+          <div>
+            <p>Durée estimée</p>
+            <p class="project-figures">
+              <span>10h</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

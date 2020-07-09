@@ -2,7 +2,7 @@
 
 .card-product {
   overflow: hidden;
-  height: 165px;
+  height: 175px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   align-items: center;
@@ -92,6 +92,11 @@
   line-height: 1.6;
 }
 
+.card-titles p {
+  margin: 0px;
+  font-size: 12px;
+}
+
 // PROJECT SKILLS
 
 .card-tags {
@@ -109,8 +114,18 @@
 .badge {
   background: #DCE0F5;
   font-weight: 400;
-  padding: 0.66em;
+  padding: 0.7em;
   margin: 8px;
+  border-radius: 5px;
+}
+
+.project-figures {
+  font-size: 12px;
+}
+
+.project-figures span {
+  color: #0122DC;
+  font-weight: 500;
 }
 
 // PROJECT SKILLS : LINKS
@@ -139,6 +154,8 @@
   text-decoration: none;
   color: #0122DC;
 }
+
+// PROJECT CARD SEPARATOR
 
 .vertical-line {
   width: 1px;
