@@ -45,7 +45,7 @@
           Plus de crédit!
         </p>
       </div>
-      <% else %>
+      <% elsif !current_user.projects.include? @project %>
         <div class="container">
           <%= link_to 'Je veux participer !', new_project_reservation_path(project), class: 'mt-5 btn btn-flat btn-primary btn-lg' %>
         </div>
