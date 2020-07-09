@@ -63,7 +63,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
-project.status = "current"
+project.status = "unstarted"
 project.save!
 
 project = Project.new
