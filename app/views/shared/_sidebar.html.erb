@@ -10,6 +10,7 @@
         <% if current_user.admin? %>
           <p><%= current_user.first_name %></p>
           <p>-<%= current_user.job%>-</p>
+          <p>PixelMe</p>
           <%= link_to 'Dashboard', dashboard_path, class:"btn btn-dashboard my-4" %>
         <% end %>
       </div>
