@@ -32,6 +32,25 @@ charity.description = "Oxfam est une organisation internationale de développeme
 charity.logo = "https://vectorlogoseek.com/wp-content/uploads/2019/06/oxfam-vector-logo.png"
 charity.save!
 
+charity = Charity.new
+charity.name = "WWF"
+charity.description = "Le WWF ou Fonds mondial pour la nature est une organisation non gouvernementale internationale créée en 1961, vouée à la protection de l'environnement et au développement durable."
+charity.logo = "https://upload.wikimedia.org/wikipedia/fr/thumb/7/79/WWF_logo_2000.svg/1200px-WWF_logo_2000.svg.png"
+charity.save!
+
+charity = Charity.new
+charity.name = "Sea shepherd"
+charity.description = "La Sea Shepherd Conservation Society est une organisation non gouvernementale internationale maritime à but non lucratif, vouée à la protection des écosystèmes marins et de la biodiversité. La Sea Shepherd Conservation Society désigne l'antenne américaine de Sea Shepherd."
+charity.logo = "https://img2.freepng.fr/20180821/ffa/kisspng-sea-shepherd-conservation-society-organization-nep-5b7bdd80843ce9.8373910715348442885417.jpg"
+charity.save!
+
+charity = Charity.new
+charity.name = "Perce Neige"
+charity.description = "Perce-Neige créée en 1966 à l'initiative de l'acteur Lino Ventura et de sa femme Odette pour venir en aide aux personnes handicapées mentales est devenue fondation reconnue d'utilité publique par décret du 13 mai 2016."
+charity.logo = "https://www.perce-neige.org/wp-content/themes/perceneige/assets/images/menu-mobile-logo.svg"
+charity.save!
+
+
 puts 'Charities created!'
 
 puts 'Creating 3 projects belonging to the same charity...'
@@ -40,19 +59,17 @@ project = Project.new
 project.name = "Refonte du site internet"
 project.description ="Le site internet des restos du coeur enregistre plus de 10 000 visites uniques par jour. Pour coller à notre nouvelle imagne et notre nouvelle charte graphique nous souhaiterions être accompagnés pour la refonte de celui-ci. Nous recherchons des développeurs séniors qui peuvent nous accompagner et nous guider. Il faut que nos équipes en interne puisse lire ce code et mettre à jour le site. Le télétravail est possible mais nous préférerions une présence physique."
 project.address = "4 Cité d'Hauteville 75010 Paris"
-project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos_du_coeur_Logo.svg/1200px-Restos_du_coeur_Logo.svg.png"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
-project.status = "current"
+project.status = "unstarted"
 project.save!
 
 project = Project.new
 project.name = "Refonte des statuts de l'association"
 project.description = "A la suite de restructurations internes, les statuts de l'association Médecins du Monde nécessitent une refonte globale. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
 project.address = "4 Cité d'Hauteville 75010 Paris"
-project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos_du_coeur_Logo.svg/1200px-Restos_du_coeur_Logo.svg.png"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
@@ -61,14 +78,46 @@ project.status = "unstarted"
 project.save!
 
 project = Project.new
-project.name = "Communication interne"
-project.description = "Campagne de communication interne, lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
+project.name = "Construction de l'intranet"
+project.description = "Dans le cadre d'une grosse campagne de communication interne, nous souhaitons refondre totalement notre intranet avec un design moderne et des supers fonctionnalités"
 project.address = "34 avenue Jean Jaurès 75019 Paris"
-project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos_du_coeur_Logo.svg/1200px-Restos_du_coeur_Logo.svg.png"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Greenpeace").first
-project.tag_list = "RH, Communication, Design"
-project.skill_list = "RH, Communication, Design"
+project.tag_list = "RH, Communication, Design, Web"
+project.skill_list = "RH, Communication, Design, Web"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Aide à la personne"
+project.description = "Nous cherchons des volontaires pour nous aider à rendre des services aux membres de l'association : déménagement, ménage, administratif"
+project.address = "34 avenue Jean Jaurès 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "Perce-Neiger").first
+project.tag_list = "Temps, Ménage, administratif"
+project.skill_list = "Temps, Ménage, administratif"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Création d'une application mobile"
+project.description = "Afin de mettre en avant une nouvelle branche de l'association, nous souhaitons créer une application mobile pour être au plus proche de nos users".
+project.address = "34 avenue Jean Jaurès 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "WWF").first
+project.tag_list = "Web, Conseil, Design"
+project.skill_list = "Web, Conseil, Design"
+project.status = "unstarted"
+project.save!
+
+project = Project.new
+project.name = "Rachat d'une autre association"
+project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques".
+project.address = "34 avenue Jean Jaurès 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "sea shepherd").first
+project.tag_list = "Juridique, Conseil, Redaction"
+project.skill_list = "Juridique, Conseil, Redaction"
 project.status = "completed"
 project.save!
 
