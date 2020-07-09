@@ -12,7 +12,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   def favorites
     # skip_authorization
     authorize Project.new
@@ -27,7 +26,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @user = current_user
-    @employees = @user.company.users
+    @employees = @project.users
     @reservation = Reservation.new
     authorize @project
   end
