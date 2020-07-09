@@ -25,13 +25,6 @@
       <%= link_to "En savoir plus", project_path(project) %>
     </div>
   </div>
-  <div class="card-tags">
-    <div class="badges">
-      <% project.tag_list.each do |skill| %>
-        <span class="badge">
-          <%= link_to skill, tagged_path(tag: skill) %>
-        </span>
-      <% end %>
     <hr class="vertical-line"/>
   <div class="card-tags">
     <div class="d-flex flex-column">
@@ -64,5 +57,3 @@
     </div>
   </div>
 </div>
-
-
