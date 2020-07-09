@@ -1,35 +1,144 @@
 a {
-  color:white;
+  color: $cocomediumgrey;
 }
 
-a:hover {
-  color:white;
+a {
+  color: $cocomediumgrey;
 }
 
 a:link {
-  text-decoration:none;
+  text-decoration: none;
+  color: $cocomediumgrey;
 }
 
-ul {
+a:visited {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
+a:active {
+  text-decoration: none;
+  color: $cocomediumgrey;
+}
+
+h4 {
+  color: $cocomediumgrey;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+#sign-out i {
+  font-size: 20px;
+  color: $cocomediumgrey;
+}
+
+.logosb {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.logosb a {
+  color : $cocoblueprimary;
+}
+
+.icons {
+  color: $cocomediumgrey;
+}
+
+.avatar-sidebar {
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 80px;
+  width: 80px;
+}
+
+.fname {
+  color: cocodarkgrey;
+}
+
+.sidebar-brand {
+  text-align: left;
+}
+
+ul.sidebar-brand {
   list-style:none;
-  margin-left:0;
-  padding-left:0;
+  padding: 0px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.btn-dashboard {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $cocoblueprimary;
+  transition: background 0.3s ease;
+  width: 140px;
+}
+
+a:hover.btn-dashboard {
+  background: #2948f2;
+  color: white;
+}
+
+a:link.btn-dashboard {
+  color: white;
+}
+
+a:visited.btn-dashboard {
+  color: white;
+}
+
+a:active.btn-dashboard {
+  color: white;
 }
 
 #sidebar-container {
-  background-color: $sidebar-bg;
+  background-color: $cocowhitebg;
   width: 200px;
   height: 100vh;
-  border-radius: 0px 10px 10px 0px;
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 0;
 }
 
 #sidebar.active {
   margin-left: -200px;
 }
 
-// #sidebar {
-//   position: sticky;
-// }
+ul.sidebar-brand {
+  list-style:none;
+  padding: 0px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+#avatar {
+  border-radius: 50%;
+  margin: -10px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+#sidebar p {
+  margin-bottom: 0px;
+  color: $cocomediumgrey;
+}
+
+#sidebarCollapse {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  padding: 6px 6px;
+}
+
+#sidebar {
+  position: relative;
+}

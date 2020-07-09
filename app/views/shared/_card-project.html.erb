@@ -1,39 +1,59 @@
-<div class="card card-body card-category">
-  <div class="card-image" style="background-image: linear-gradient(rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url('<%= image_path 'resto.jpg' %>');">
+<div class="card-product my-5 d-flex flex-row justify-content-around">
+  <div class="card-logo">
+    <%= image_tag project.charity.logo %>
   </div>
-  <div class="badges">
-    <% project.skill_list.each do |skill| %>
-      <span class="badge badge-primary %>">
-        <%= link_to skill, tagged_path(tag: skill) %>
-      </span>
-    <% end %>
-  </div>
-  <div class="text-center">
-    <h3 class="pt-2">
-      <%= project.name %>
-    </h3>
-    <p>
+  <div class="card-product-infos">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="card-titles d-flex flex-column">
+        <h2>
+          <%= project.name %>
+        </h2>
+        <p><%= project.charity.name %></p>
+      </div>
+      <%= link_to favorite_project_path(project) do %>
+        <% if current_user.company.favorited?(project) && current_user.admin %>
+          <i class="fas fa-star"></i>
+        <% elsif current_user.admin %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <p class="card-description">
       <%= project.description %>
     </p>
-  </div>
-  <%= link_to "Show more", project_path(project), class: "text-secondary" %>
-
-  <hr class="m-0">
-
-  <div class="d-flex justify-content-around align-items-center pt-4 ">
-    <p class="mb-0">6 heures</p>
-    <div class="d-flex justify-content-start" >
-      <%= image_tag "clem.jpg", class: "avatar", alt: "avatar" %>
-      <%= image_tag "alex.jpg", class: "avatar", alt: "avatar" %>
-      <%= image_tag "max.jpg", class: "avatar", alt: "avatar" %>
+    <div class="card-description-link">
+      <%= link_to "En savoir plus", project_path(project) %>
     </div>
-
-    <%= link_to favorite_project_path(project) do %>
-      <% if current_user.company.favorited?(project) && current_user.admin %>
-        <i class="fas fa-star"></i>
-      <% elsif current_user.admin %>
-        <i class="far fa-star"></i>
-      <% end %>
-    <% end %>
+  </div>
+    <hr class="vertical-line"/>
+  <div class="card-tags">
+    <div class="d-flex flex-column">
+      <div>
+        <p>Compétences</p>
+        <div class="d-flex flex-row">
+          <% project.tag_list.first(3).each do |tag| %>
+            <span class="badge">
+              <%= link_to tag.capitalize, tagged_path(tag: tag) %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <div class="d-flex flex-row justify-content-between mt-3">
+          <div>
+            <p>Délai</p>
+            <p class="project-figures">
+              <span>moyen</span> terme
+            </p>
+          </div>
+          <div>
+            <p>Durée estimée</p>
+            <p class="project-figures">
+              <span>10h</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -13,18 +13,13 @@
 
   <body>
     <%= render 'shared/flashes' %>
-      <% unless current_page?(root_path) %>
+      <%# unless current_page?(root_path) %>
         <div class="d-flex">
           <%= render 'shared/sidebar' %>
           <%= yield %>
         </div>
-      <% else %>
-        <%= yield %>
-<<<<<<< HEAD
-      <% end %>
-=======
-      </div>
-    </div>
->>>>>>> f14b323c8e95281354fa3c7e494c3d3e64a72f8a
+      <%# else %>
+        <%# yield %>
+      <%# end %>
   </body>
 </html>
