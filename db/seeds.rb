@@ -49,7 +49,7 @@ project.save!
 
 project = Project.new
 project.name = "Refonte des statuts de l'association"
-project.description = "A la suite de restructurations internes, les statuts de l'association Médecins du Monde nécessitent une refonte globale."
+project.description = "A la suite de restructurations internes, les statuts de l'association Médecins du Monde nécessitent une refonte globale. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
 project.address = "4 Cité d'Hauteville 75010 Paris"
 project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos_du_coeur_Logo.svg/1200px-Restos_du_coeur_Logo.svg.png"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
