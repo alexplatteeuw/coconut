@@ -1,79 +1,166 @@
-i {
-  color:black;
+// PROJECT CARD
+
+.card-product {
+  overflow: hidden;
+  height: 175px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
 }
 
-p {
-  color:black;
+.card-product i {
+  color: black;
+}
+
+// PROJECT CARD : LINKS
+
+.card-description-link a {
+  color: black;
+  font-size: 12px;
+  float: right;
+  margin: 10px 0px;
+}
+
+.card-description-link a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-description-link a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.card-description-link a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.card-description-link a:active {
+  text-decoration: none;
+  color: black;
+}
+
+// PROJECT LOGO
+
+.card-logo {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 12px;
+  margin-left: 20px;
+}
+
+.card-logo img {
+  width: 100px;
+}
+
+// PROJECT TITLE
+
+.card-product h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+// PROJECT DESCRIPTION
+
+.card-description {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  // Keep description on 3 lines no matter what:
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card-description-link {
+  color: black;
+}
+
+// PROJECT TITLE & DESCRIPTION
+
+.card-product .card-product-infos {
+  padding: 0 20px;
+}
+
+.card-product-infos p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.card-titles p {
+  margin: 0px;
+  font-size: 12px;
+}
+
+// PROJECT SKILLS
+
+.card-tags {
+  min-width: 250px;
+  height: 100%;
+  margin: 0px 16px;
+  padding: 16px 0px;
+}
+
+.card-tags p {
+  margin-bottom: 0px;
+  margin-left: 8px;
 }
 
 .badge {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: #DCE0F5;
+  font-weight: 400;
+  padding: 0.7em;
+  margin: 8px;
+  border-radius: 5px;
 }
 
-.badges {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+.project-figures {
+  font-size: 12px;
 }
 
-.card-category {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: relative;
-
+.project-figures span {
+  color: #0122DC;
+  font-weight: 500;
 }
 
-.card-image {
-  background-size: cover;
-  background-position: center;
-  height: 200px;
+// PROJECT SKILLS : LINKS
+
+.badge a {
+  text-decoration: none;
+  color: #0122DC;
 }
 
-.card-category .card-image {
-  width: 100%;
+.badge a:link {
+  text-decoration: none;
+  color: #0122DC;
 }
 
-.card-category h2 {
-  padding: 10px;
+.badge a:visited {
+  text-decoration: none;
+  color: #0122DC;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.badge a:hover {
+  text-decoration: none;
+  color: #0122DC;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.badge a:active {
+  text-decoration: none;
+  color: #0122DC;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
+// PROJECT CARD SEPARATOR
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
+.vertical-line {
+  width: 1px;
+  height: 80%;
+  background: $cocolightgrey;
+  border: none;
 }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
