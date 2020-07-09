@@ -11,9 +11,9 @@
   </div>
   <div class="card-tags">
     <div class="badges">
-      <% project.tag_list.each do |tag| %>
+      <% project.tag_list.first(3).each do |tag| %>
         <span class="badge">
-          <%= link_to tag, tagged_path(tag: tag) %>
+          <%= link_to tag.capitalize, tagged_path(tag: tag) %>
         </span>
       <% end %>
     </div>
