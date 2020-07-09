@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
     end
   end
 
+
   def favorites
     # skip_authorization
     authorize Project.new
