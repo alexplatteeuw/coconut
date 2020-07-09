@@ -15,8 +15,8 @@ charity.logo = "https://seeklogo.com/images/L/Les_Restaurants_Du_Coeur-logo-6D68
 charity.save!
 
 charity = Charity.new
-charity.name = "Greenpeace"
-charity.description = "Greenpeace est une organisation non gouvernementale internationale (ONGI) de protection de l'environnement présente dans plus de 55 pays à travers le monde1. Fondée en 1971, par Jim Bohlen et Irving Stowe, après le mouvement Don't Make a Wave Committee visant à s'opposer aux essais nucléaires aux États-Unis, l’organisation Greenpeace est un groupe de plaidoyer luttant contre ce qu'elle estime être les plus grandes menaces pour l'environnement et la biodiversité sur la planète."
+charity.name = "Médecins Sans Frontière"
+charity.description = "Médecins Sans Frontière est une organisation non gouvernementale internationale (ONGI) de protection de l'environnement présente dans plus de 55 pays à travers le monde1. Fondée en 1971, par Jim Bohlen et Irving Stowe, après le mouvement Don't Make a Wave Committee visant à s'opposer aux essais nucléaires aux États-Unis, l’organisation Greenpeace est un groupe de plaidoyer luttant contre ce qu'elle estime être les plus grandes menaces pour l'environnement et la biodiversité sur la planète."
 charity.logo = "https://upload.wikimedia.org/wikipedia/fr/thumb/6/69/MSF.svg/1200px-MSF.svg.png"
 charity.save!
 
@@ -82,6 +82,7 @@ project.name = "Construction de l'intranet"
 project.description = "Dans le cadre d'une grosse campagne de communication interne, nous souhaitons refondre totalement notre intranet avec un design moderne et des supers fonctionnalités"
 project.address = "34 avenue Jean Jaurès 75019 Paris"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+
 project.charity = Charity.where(name: "Greenpeace").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
@@ -118,6 +119,11 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
+
+project.charity = Charity.where(name: "Médecins Sans Frontière").first
+project.tag_list = "RH, Communication, Design"
+project.skill_list = "RH, Communication, Design"
+
 project.status = "completed"
 project.save!
 
@@ -160,6 +166,21 @@ user.address = "25 rue du javelot 75013 Paris"
 user.skill_list = "CSS, JS, Design"
 user.company = Company.first
 user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
+user.credits = 40
+user.save!
+
+user = User.new
+user.first_name = "Pauline"
+user.last_name = "Paris"
+user.email = "pauline@lewagon.org"
+user.password = "pauline"
+user.description = "Super Ingénieur informatique chez Monop"
+user.job = "Ingénieur informatique"
+user.admin = false
+user.address = "25 rue des boulets"
+user.skill_list = "CSS, JS, Design"
+user.company = Company.first
+user.avatar_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1586873952/kfn110hfwqteucjluzwx.jpg"
 user.credits = 40
 user.save!
 
