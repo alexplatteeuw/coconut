@@ -1,39 +1,21 @@
-<div class="card card-body card-category">
+<div class="card-product my-5">
   <div class="card-image" style="background-image: linear-gradient(rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url('<%= image_path 'resto.jpg' %>');">
   </div>
-  <div class="badges">
-    <% project.tag_list.each do |skill| %>
-      <span class="badge badge-primary %>">
-        <%= link_to skill, tagged_path(tag: skill) %>
-      </span>
-    <% end %>
-  </div>
-  <div class="text-center">
-    <h3 class="pt-2">
+  <div class="card-product-infos">
+    <h2>
       <%= project.name %>
-    </h3>
-    <p>
+    </h2>
+    <p class="card-description">
       <%= project.description %>
     </p>
   </div>
-  <%= link_to "Show more", project_path(project), class: "text-secondary" %>
-
-  <hr class="m-0">
-
-  <div class="d-flex justify-content-around align-items-center pt-4 ">
-    <p class="mb-0">6 heures</p>
-    <div class="d-flex justify-content-start" >
-      <%= image_tag "clem.jpg", class: "avatar", alt: "avatar" %>
-      <%= image_tag "alex.jpg", class: "avatar", alt: "avatar" %>
-      <%= image_tag "max.jpg", class: "avatar", alt: "avatar" %>
-    </div>
-
-    <%= link_to favorite_project_path(project) do %>
-      <% if current_user.company.favorited?(project) && current_user.admin %>
-        <i class="fas fa-star"></i>
-      <% elsif current_user.admin %>
-        <i class="far fa-star"></i>
+  <div class="card-tags">
+    <div class="badges">
+      <% project.tag_list.each do |tag| %>
+        <span class="badge">
+          <%= link_to tag, tagged_path(tag: tag) %>
+        </span>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
