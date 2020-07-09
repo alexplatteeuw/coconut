@@ -80,10 +80,9 @@ project.save!
 project = Project.new
 project.name = "Construction de l'intranet"
 project.description = "Dans le cadre d'une grosse campagne de communication interne, nous souhaitons refondre totalement notre intranet avec un design moderne et des supers fonctionnalités"
-project.address = "34 avenue Jean Jaurès 75019 Paris"
+project.address = "3 avenue Jean 75019 Paris"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
-
-project.charity = Charity.where(name: "Greenpeace").first
+project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.status = "completed"
@@ -92,9 +91,9 @@ project.save!
 project = Project.new
 project.name = "Aide à la personne"
 project.description = "Nous cherchons des volontaires pour nous aider à rendre des services aux membres de l'association : déménagement, ménage, administratif"
-project.address = "34 avenue Jean Jaurès 75019 Paris"
+project.address = "35 rue Jean Jaurès 75019 Paris"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
-project.charity = Charity.where(name: "Perce-Neiger").first
+project.charity = Charity.where(name: "Perce Neige").first
 project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
 project.status = "completed"
@@ -102,7 +101,7 @@ project.save!
 
 project = Project.new
 project.name = "Création d'une application mobile"
-project.description = "Afin de mettre en avant une nouvelle branche de l'association, nous souhaitons créer une application mobile pour être au plus proche de nos users".
+project.description = "Afin de mettre en avant une nouvelle branche de l'association, nous souhaitons créer une application mobile pour être au plus proche de nos users"
 project.address = "34 avenue Jean Jaurès 75019 Paris"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "WWF").first
@@ -113,17 +112,12 @@ project.save!
 
 project = Project.new
 project.name = "Rachat d'une autre association"
-project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques".
-project.address = "34 avenue Jean Jaurès 75019 Paris"
+project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques"
+project.address = "4 rue Pierre 75019 Paris"
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
-project.charity = Charity.where(name: "sea shepherd").first
+project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
-
-project.charity = Charity.where(name: "Médecins Sans Frontière").first
-project.tag_list = "RH, Communication, Design"
-project.skill_list = "RH, Communication, Design"
-
 project.status = "completed"
 project.save!
 
