@@ -2,7 +2,7 @@
 
 .card-product {
   overflow: hidden;
-  height: 150px;
+  height: 165px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   align-items: center;
@@ -15,28 +15,31 @@
 
 // PROJECT CARD : LINKS
 
-.card-product a {
-  color: white;
+.card-description-link a {
+  color: black;
+  font-size: 12px;
+  float: right;
+  margin: 10px 0px;
 }
 
-.card-product a:link {
+.card-description-link a:link {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-product a:visited {
+.card-description-link a:visited {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-product a:hover {
+.card-description-link a:hover {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.card-product a:active {
+.card-description-link a:active {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 // PROJECT LOGO
@@ -75,6 +78,10 @@
   -webkit-box-orient: vertical;
 }
 
+.card-description-link {
+  color: black;
+}
+
 // PROJECT TITLE & DESCRIPTION
 
 .card-product .card-product-infos {
@@ -91,11 +98,11 @@
 .card-tags {
   min-width: 250px;
   height: 100%;
+  padding-top: 16px;
 }
 
 .card-tags p {
   margin-bottom: 0px;
-  margin-top: 10px;
   margin-left: 8px;
 }
 
@@ -131,4 +138,11 @@
 .badge a:active {
   text-decoration: none;
   color: #0122DC;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 80%;
+  background: $cocolightgrey;
+  border: none;
 }

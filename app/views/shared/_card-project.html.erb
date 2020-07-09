@@ -18,8 +18,11 @@
     <p class="card-description">
       <%= project.description %>
     </p>
-    <%= link_to "En savoir plus", project_path(project), class: "text-secondary" %>
+    <div class="card-description-link">
+      <%= link_to "En savoir plus", project_path(project) %>
+    </div>
   </div>
+    <hr class="vertical-line"/>
   <div class="card-tags">
     <p>Compétences</p>
     <div class="d-flex flex-row">
