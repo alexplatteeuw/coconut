@@ -20,4 +20,3 @@ export { adminCharts };
 
   console.log("je suis à l'exterieur")
 
-//UserBookingData
