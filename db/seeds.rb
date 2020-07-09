@@ -44,6 +44,7 @@ project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
+project.skill_list = "Informatique, Web, Design"
 project.status = "current"
 project.save!
 
@@ -55,6 +56,7 @@ project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
+project.skill_list = "Juridique, Loi 1901"
 project.status = "unstarted"
 project.save!
 
@@ -66,6 +68,7 @@ project.image_url = "https://upload.wikimedia.org/wikipedia/fr/thumb/a/ad/Restos
 project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Greenpeace").first
 project.tag_list = "RH, Communication, Design"
+project.skill_list = "RH, Communication, Design"
 project.status = "completed"
 project.save!
 
@@ -108,6 +111,7 @@ user.address = "25 rue du javelot 75013 Paris"
 user.skill_list = "CSS, JS, Design"
 user.company = Company.first
 user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
+user.credits = 40
 user.save!
 
 puts 'Users created!'

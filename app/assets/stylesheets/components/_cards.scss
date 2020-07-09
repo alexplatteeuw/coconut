@@ -7,6 +7,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   align-items: center;
   border-radius: 5px;
+  padding: 20px;
 }
 
 .card-product i {
@@ -84,7 +85,7 @@
 // PROJECT TITLE & DESCRIPTION
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 0 20px;
 }
 
 .card-product-infos p {
