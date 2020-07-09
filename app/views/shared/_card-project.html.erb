@@ -3,9 +3,18 @@
     <%= image_tag project.charity.logo %>
   </div>
   <div class="card-product-infos">
-    <h2>
-      <%= project.name %>
-    </h2>
+    <div class="d-flex flex-row justify-content-between">
+      <h2>
+        <%= project.name %>
+      </h2>
+      <%= link_to favorite_project_path(project) do %>
+        <% if current_user.company.favorited?(project) && current_user.admin %>
+          <i class="fas fa-star"></i>
+        <% elsif current_user.admin %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+    </div>
     <p class="card-description">
       <%= project.description %>
     </p>

@@ -9,6 +9,10 @@
   border-radius: 5px;
 }
 
+.card-product i {
+  color: black;
+}
+
 // PROJECT CARD : LINKS
 
 .card-product a {
@@ -40,7 +44,8 @@
 .card-logo {
   max-width: 100px;
   max-height: 100px;
-  margin: 20px;
+  margin-right: 12px;
+  margin-left: 20px;
 }
 
 .card-logo img {
