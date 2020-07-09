@@ -11,7 +11,8 @@
     </p>
   </div>
   <div class="card-tags">
-    <div class="badges">
+    <p>Compétences</p>
+    <div class="d-flex flex-row">
       <% project.tag_list.first(3).each do |tag| %>
         <span class="badge">
           <%= link_to tag.capitalize, tagged_path(tag: tag) %>
