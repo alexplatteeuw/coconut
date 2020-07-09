@@ -118,7 +118,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
-project.status = "completed"
+project.status = "current"
 project.save!
 
 puts 'Projects created!'
