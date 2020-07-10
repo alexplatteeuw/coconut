@@ -1,4 +1,10 @@
 class Project < ApplicationRecord
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :name, :description
+  end
+
   belongs_to :charity
   has_many :reservations
   has_many :users, -> { distinct }, through: :reservations
@@ -8,10 +14,4 @@ class Project < ApplicationRecord
 
   acts_as_taggable_on :tags, :skills
   acts_as_favoritable
-
-  include AlgoliaSearch
-
-  algoliasearch do
-    attributes :name, :description
-  end
 end
