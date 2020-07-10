@@ -32,6 +32,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import { adminCharts } from '../plugins/charts';
 import { initChart } from "../plugins/initChart";
+import { search } from "../plugins/algolia_search";
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   $(document).ready(function () {
 
     adminCharts();
+    search();
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
