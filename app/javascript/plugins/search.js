@@ -1,6 +1,5 @@
 
   const fetchProjects = (query) => {
-    console.log(query);
     fetch(`/projects?q=${query}`, {
       headers: {
             accept: "application/json"
@@ -8,7 +7,7 @@
     })
       .then(response => response.json())
       .then((data) => {
-        // data.forEach(car => addCar(car));
+        console.log(data);
         const projectsContainer = document.getElementById('projects-container');
         projectsContainer.innerHTML = data.html;
       });
