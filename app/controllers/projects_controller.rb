@@ -1,14 +1,27 @@
 class ProjectsController < ApplicationController
   def index
     skip_policy_scope
-    if params[:q].present?
-      @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
-    elsif params[:tag].present?
-      @projects = policy_scope(Project).tagged_with(params[:tag])
-    elsif current_user.admin?
-      @projects = policy_scope(Project).order(created_at: :desc)
+    if current_user.admin?
+      if params[:q].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @projects = policy_scope(Project).where(sql_query, query: "%#{params[:q]}%")
+      elsif params[:tag].present?
+        @projects = policy_scope(Project).tagged_with(params[:tag]).uniq
+      else
+        @projects = policy_scope(Project).order(created_at: :desc)
+      end
     else
       @projects = current_user.company.all_favorited
+      if params[:q].present?
+        @projects = @projects.select {|project| project.name.include? params[:q]}
+      elsif params[:tag].present?
+        @projects = @projects.select{|project| project.skill_list.include? params[:tag]}
+      end
+    end
+
+    respond_to do |format|
+      format.json { render json: { html: render_to_string(partial: "shared/projects_container", locals: { projects: @projects }, formats: [:html]) } }
+      format.html
     end
   end
 
