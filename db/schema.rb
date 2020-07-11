@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_085021) do
+ActiveRecord::Schema.define(version: 2020_07_11_102510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 2020_07_11_085021) do
     t.string "image_url"
     t.string "video_url"
     t.string "status", default: "unstarted"
+    t.string "tache"
     t.index ["charity_id"], name: "index_projects_on_charity_id"
   end
 

@@ -34,6 +34,8 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'mailboxer'
 
+gem 'elasticsearch-model'
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

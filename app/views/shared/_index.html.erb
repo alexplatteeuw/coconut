@@ -3,9 +3,7 @@
     <%= render "shared/search-bar" %>
   </div>
   <h2>Besoins des associations</h2>
-    <div class="cards">
-      <% projects.each do |project| %>
-        <%= render "shared/card-project", project: project %>
-      <% end %>
-    </div>
+  <div id="projects-container">
+    <%= render "shared/projects_container", projects: @projects %>
+  </div>
 </div>
