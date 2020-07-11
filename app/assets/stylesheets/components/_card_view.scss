@@ -3,9 +3,41 @@
   height: 400px;
   width: 300px;
 }
+.card_view p {
+ margin: 0px;
+ font-size: 12px;
+}
 
 .avatartar {
   border-radius: 50%;
   height: 60px;
   width: 60px;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    padding: 8px;
+
+    background: #fff;
+    border: 3px solid $cocoblueprimary;
+    color: $cocoblueprimary;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}
+
+.numberCircle2 {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    padding: 8px;
+
+    background: #fff;
+    border: 3px solid $cocomediumgrey;
+    color: $cocomediumgrey;
+    text-align: center;
+
+    font: 29px Arial, sans-serif;
 }
