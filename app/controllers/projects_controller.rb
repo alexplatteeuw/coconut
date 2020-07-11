@@ -10,6 +10,11 @@ class ProjectsController < ApplicationController
     else
       @projects = current_user.company.all_favorited
     end
+
+    respond_to do |format|
+      format.json { render json: { html: render_to_string(partial: "shared/projects_container", locals: { projects: @projects }, formats: [:html]) } }
+      format.html
+    end
   end
 
   def favorites
