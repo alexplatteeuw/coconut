@@ -75,12 +75,12 @@ class UsersController < ApplicationController
         {
           label: "Projets à lancer",
           data: [unstarted_projects.count],
-          backgroundColor: ["green"]
+          backgroundColor: ["#3351F5"]
         },
         {
           label: "Projets en cours",
           data: [current_projects.count],
-          backgroundColor: ["yellow"]
+          backgroundColor: ["#DDE0F3"]
         },
         {
           label: "Projets terminés",
