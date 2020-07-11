@@ -1,1 +1,36 @@
-<p>Vue d'ensemble</p>
+<div class="container">
+
+  <div class="d-flex justify-content-around mt-5">
+
+    <div class="card_view">
+      <h2>L'équipe</h2>
+        <% employees.each do |employee| %>
+          <div class="d-flex justify-content-start m-4">
+            <%= image_tag employee.avatar_url, class: "avatartar mr-3", alt: "avatar" %>
+            <div class="mt-2">
+              <b><%= "#{employee.first_name} #{employee.last_name}" %></b>
+              <p>
+                <%= "#{employee.job}" %>
+              </p>
+             </div>
+          </div>
+        <% end %>
+    </div>
+
+    <div class="card_view">
+      <h2>Prochaine tâche</h2>
+          <div class="d-flex justify-content-start m-4">
+            <%= image_tag  @user.avatar_url, class: "avatartar mr-3", alt: "avatar" %>
+            <span class="badge">
+              <p>urgent</p>
+            </span>
+            <p><%= project.tache %></p>
+          </div>
+    </div>
+
+    <div class="card_view">
+      <h2>Prochain évènement</h2>
+    </div>
+
+  </div>
+</div>

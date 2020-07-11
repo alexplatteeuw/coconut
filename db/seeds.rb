@@ -63,6 +63,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
+project.tache = "Créer formulaire de contact"
 project.status = "unstarted"
 project.save!
 
@@ -74,6 +75,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
+project.tache = "Vérifier la jurisprudence"
 project.status = "unstarted"
 project.save!
 
@@ -85,6 +87,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
+project.tache = "Contacter le gestionnaire de réseau"
 project.status = "completed"
 project.save!
 
@@ -96,6 +99,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Perce Neige").first
 project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
+project.tache = "Réserver son créneau"
 project.status = "completed"
 project.save!
 
@@ -107,6 +111,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "WWF").first
 project.tag_list = "Web, Conseil, Design"
 project.skill_list = "Web, Conseil, Design"
+project.tache = "Publier sur l'Apple store"
 project.status = "unstarted"
 project.save!
 
@@ -118,6 +123,7 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
 project.status = "current"
 project.save!
 
@@ -154,7 +160,7 @@ user.last_name = "Lemaire"
 user.email = "clem@lewagon.org"
 user.password = "clement"
 user.description = "Ingénieur informatique qui connaît par coeur le setup du Wagon"
-user.job = "Ingénieur informatique"
+user.job = "Developpeur"
 user.admin = false
 user.address = "25 rue du javelot 75013 Paris"
 user.skill_list = "CSS, JS, Design"
@@ -169,7 +175,7 @@ user.last_name = "Paris"
 user.email = "pauline@lewagon.org"
 user.password = "pauline"
 user.description = "Super Ingénieur informatique chez Monop"
-user.job = "Ingénieur informatique"
+user.job = "Developpeur"
 user.admin = false
 user.address = "25 rue des boulets"
 user.skill_list = "CSS, JS, Design"
