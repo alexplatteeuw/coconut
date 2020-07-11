@@ -25,4 +25,8 @@ class ProjectPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    record.users.include?(user)
+  end
+
 end

@@ -1,1 +1,19 @@
-<h1>coucou</h1>
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="">
+        <h3>Ajoutez une ressource</h3>
+        <p>Partagez un fichier csv, jpg ou pdf</p>
+        <%= simple_form_for(project) do |f| %>
+          <%= f.input :documents, as: :file %>
+          <%= f.button :submit, "Télécharger", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="">
+        <% @project.documents.each do |doc| %>
+          <%= link_to("Download", rails_blob_path(doc, disposition: 'attachment'))  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

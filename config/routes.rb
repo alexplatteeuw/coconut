@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'projects#index'
   devise_for :users
 
-  resources :projects, only: [:index, :show] do
+  resources :projects, only: [:index, :show, :update] do
     resources :reservations, only: [:create, :new]
     member do
       get 'favorite', to: 'projects#favorite'
