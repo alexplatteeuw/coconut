@@ -5,10 +5,23 @@ class ProjectsController < ApplicationController
       @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
     elsif params[:tag].present?
       @projects = policy_scope(Project).tagged_with(params[:tag])
-    elsif current_user.admin?
-      @projects = policy_scope(Project).order(created_at: :desc)
+    end
+
+    if current_user.admin?
+      if params[:q].present?
+        @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
+      elsif params[:tag].present?
+        @projects = policy_scope(Project).tagged_with(params[:tag])
+      else
+        @projects = policy_scope(Project).order(created_at: :desc)
+      end
     else
       @projects = current_user.company.all_favorited
+      if params[:q].present?
+        @projects = @projects.select {|project| project.name.include? params[:q]}
+      elsif params[:tag].present?
+        @projects = @projects.select{|project| project.skill_list.include? params[:tag]}
+      end
     end
 
     respond_to do |format|
