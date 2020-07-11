@@ -60,4 +60,23 @@ class ProjectsController < ApplicationController
     authorize Project.new
     @projects = current_user.projects.where(status: :unstarted)
   end
+
+  def update
+    @project = Project.find(params[:id])
+    authorize @project
+    @project.update(project_params)
+    if @project.save!
+      redirect_to project_path(@project)
+    else
+      render dashboard_path
+    end
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:documents)
+  end
+
+
 end
