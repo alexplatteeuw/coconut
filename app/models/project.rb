@@ -8,4 +8,6 @@ class Project < ApplicationRecord
   validates :status, inclusion: { in: ['unstarted', 'current', 'completed'] }, presence: true
 
   acts_as_favoritable
+
+  include Elasticsearch::Model
 end
