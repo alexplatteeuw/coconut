@@ -7,6 +7,7 @@
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data);
         const projectsContainer = document.getElementById('projects-container');
         projectsContainer.innerHTML = data.html;
       });

@@ -53,7 +53,7 @@ charity.save!
 
 puts 'Charities created!'
 
-puts 'Creating 3 projects belonging to the same charity...'
+puts 'Creating 6 projects belonging to the same charity...'
 
 project = Project.new
 project.name = "Refonte du site internet"

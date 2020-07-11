@@ -1,17 +1,12 @@
 class ProjectsController < ApplicationController
   def index
     skip_policy_scope
-    if params[:q].present?
-      @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
-    elsif params[:tag].present?
-      @projects = policy_scope(Project).tagged_with(params[:tag])
-    end
-
     if current_user.admin?
       if params[:q].present?
-        @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:q]}%")
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @projects = policy_scope(Project).where(sql_query, query: "%#{params[:q]}%")
       elsif params[:tag].present?
-        @projects = policy_scope(Project).tagged_with(params[:tag])
+        @projects = policy_scope(Project).tagged_with(params[:tag]).uniq
       else
         @projects = policy_scope(Project).order(created_at: :desc)
       end
