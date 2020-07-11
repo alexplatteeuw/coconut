@@ -28,7 +28,7 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
-import { adminCharts } from '../pluggins/charts.js';
+import { adminCharts } from '../plugins/charts';
 import { initChart } from "../plugins/initChart";
 
 document.addEventListener('turbolinks:load', () => {
