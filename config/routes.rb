@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       get 'favorite', to: 'projects#favorite'
     end
+    resources :chatrooms, only: :show
   end
 
   get 'my-projects', to: 'projects#myprojects'
