@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import { initSelect2 } from "../plugins/init_select2"
+import { initChatroomCable } from "../channels/chatroom_channel"
 import "bootstrap";
 
 
@@ -33,6 +34,7 @@ import { initChart } from "../plugins/initChart";
 
 document.addEventListener('turbolinks:load', () => {
 
+  initChatroomCable()
 
   $(document).ready(function () {
 

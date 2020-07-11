@@ -57,8 +57,10 @@ ActiveRecord::Schema.define(version: 2020_07_11_085021) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
+    t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_chatrooms_on_project_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -224,6 +226,7 @@ ActiveRecord::Schema.define(version: 2020_07_11_085021) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "projects"
   add_foreign_key "bookings", "users"
+  add_foreign_key "chatrooms", "projects"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
