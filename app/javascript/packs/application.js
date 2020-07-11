@@ -23,8 +23,6 @@ require("channels")
 
 
 // External imports
-import { initSelect2 } from "../plugins/init_select2"
-import { initChatroomCable } from "../channels/chatroom_channel"
 import "bootstrap";
 
 
@@ -32,10 +30,15 @@ import "bootstrap";
 import { adminCharts } from '../plugins/charts';
 import { initChart } from "../plugins/initChart";
 import { initInstantSearch } from "../plugins/search";
+import { initSelect2 } from "../plugins/init_select2"
+import { initChatroomCable } from "../channels/chatroom_channel"
+import { initCalendar } from "../plugins/fullCalendar"
 
 document.addEventListener('turbolinks:load', () => {
 
-  initChatroomCable()
+  initCalendar();
+
+  initChatroomCable();
 
   $(document).ready(function () {
 
