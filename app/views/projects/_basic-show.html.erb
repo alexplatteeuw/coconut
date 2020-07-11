@@ -8,7 +8,7 @@
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
         <h1 class="display-5"><%= project.name %></h1>
-        <p class="lead text-white mb-0">👉 <%= project.charity.name %> <%= image_tag project.image_url, height: 50, crop: :fill %></p>
+        <p class="lead text-white mb-0">👉 <%= project.charity.name %> <%= image_tag project.charity.logo, height: 50, crop: :fill %></p>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@
           Plus de crédit!
         </p>
       </div>
-      <% else %>
+      <% elsif !current_user.projects.include? @project %>
         <div class="container">
           <%= link_to 'Je veux participer !', new_project_reservation_path(project), class: 'mt-5 btn btn-flat btn-primary btn-lg' %>
         </div>

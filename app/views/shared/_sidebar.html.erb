@@ -10,6 +10,7 @@
         <% if current_user.admin? %>
           <p><%= current_user.first_name %></p>
           <p>-<%= current_user.job%>-</p>
+          <p>PixelMe</p>
           <%= link_to 'Dashboard', dashboard_path, class:"btn btn-dashboard my-4" %>
         <% end %>
       </div>
@@ -26,7 +27,7 @@
           </li>
         <% else %>
           <li>
-            <i class="icons pr-3 fa fa-bookmark-o" aria-hidden="true"></i>
+            <i class="icons pr-3 far fa-bookmark" aria-hidden="true"></i>
             <%= link_to 'Mes projets', my_projects_path %>
           </li>
         <% end %>
