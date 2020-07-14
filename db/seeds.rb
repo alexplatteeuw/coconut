@@ -64,6 +64,7 @@ project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
 project.tache = "Créer formulaire de contact"
+project.nbtaches = "8"
 project.status = "unstarted"
 project.save!
 
@@ -76,6 +77,7 @@ project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
+project.nbtaches = "2"
 project.status = "unstarted"
 project.save!
 
@@ -88,6 +90,7 @@ project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
+project.nbtaches = "11"
 project.status = "completed"
 project.save!
 
@@ -100,6 +103,7 @@ project.charity = Charity.where(name: "Perce Neige").first
 project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
 project.tache = "Réserver son créneau"
+project.nbtaches = "8"
 project.status = "completed"
 project.save!
 
@@ -112,6 +116,7 @@ project.charity = Charity.where(name: "WWF").first
 project.tag_list = "Web, Conseil, Design"
 project.skill_list = "Web, Conseil, Design"
 project.tache = "Publier sur l'Apple store"
+project.nbtaches = "3"
 project.status = "unstarted"
 project.save!
 
@@ -124,6 +129,7 @@ project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
+project.nbtaches = "4"
 project.status = "current"
 project.save!
 
