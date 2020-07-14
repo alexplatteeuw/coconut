@@ -46,3 +46,10 @@ header .overlay {
     display: none;
   }
 }
+
+.vertical-line-show {
+  width: 1px;
+  height: 1800%;
+  background: $cocolightgrey;
+  border: none;
+}
