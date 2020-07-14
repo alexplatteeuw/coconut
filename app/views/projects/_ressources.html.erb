@@ -14,6 +14,14 @@
           <%= link_to("Download", rails_blob_path(doc, disposition: 'attachment'))  %>
         <% end %>
       </div>
+      <div style="height: 100px; width: 100px;">
+        <% @project.documents.each do |doc| %>
+          <%= link_to rails_blob_path(doc, disposition: "attachment"), target: "_blank" do %>
+            <i class="fas fa-file-download"></i>
+          <% end %>
+        <% end %>
+        <%#= cl_image_tag("bohldjm3nqztdg0ewnhezdx40hi7.pdf", attachment: :true) %>
+      </div>
     </div>
   </div>
 </div>

@@ -41,6 +41,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @employees = @project.users
     @reservation = Reservation.new
+    @project.chatroom = Chatroom.new if @project.chatroom.nil?
     authorize @project
   end
 
