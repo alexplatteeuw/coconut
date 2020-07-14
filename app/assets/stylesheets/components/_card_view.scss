@@ -2,6 +2,7 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   height: 400px;
   width: 300px;
+  border-radius: 5px;
 }
 
 .card_view h2 {
@@ -9,6 +10,13 @@
   text-align: center;
   padding: 13px;
   color: $cocoblueprimary;
+}
+
+.card_view h3 {
+  font-size: 16px;
+  text-align: center;
+  padding: 13px;
+  color: $cocoblueprimarydark;
 }
 
 .card_view p {

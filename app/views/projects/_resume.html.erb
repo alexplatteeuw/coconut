@@ -23,12 +23,12 @@
       <hr>
           <div class="d-flex justify-content-start m-4">
             <%= image_tag  @user.avatar_url, class: "avatartar mr-3", alt: "avatar" %>
-            <div>
+            <div class="d-flex align-items-center">
               <span class="badge">
-                <p>Urgent</p>
+                <p>To do</p>
               </span>
               <span class="badge">
-                <p>Remote</p>
+                <p>Urgent</p>
               </span>
             </div>
           </div>
@@ -36,12 +36,14 @@
 
           <div class="d-flex justify-content-center" >
               <p>Nombre de taches restantes</p>
-              <%= project.nbtaches %>
-            </div>
+          </div>
+            <h2><%= project.nbtaches %></h2>
           <hr>
 
-            <p>👉 prochaine tache</p>
-            <p><%= project.tache %></p>
+          <div class="d-flex justify-content-center" >
+              <p>Prochaine tache</p>
+          </div>
+            <h3><%= project.tache %></h3>
           </div>
 
 
