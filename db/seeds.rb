@@ -2,6 +2,7 @@ puts 'Cleaning DB ...'
 
 Reservation.destroy_all
 Charity.destroy_all
+Chatroom.destroy_all
 Project.destroy_all
 Company.destroy_all
 User.destroy_all
@@ -64,7 +65,7 @@ project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
 project.tache = "Créer formulaire de contact"
-project.status = "unstarted"
+project.status = "created"
 project.save!
 
 project = Project.new
@@ -76,7 +77,7 @@ project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
-project.status = "unstarted"
+project.status = "created"
 project.save!
 
 project = Project.new
@@ -112,7 +113,7 @@ project.charity = Charity.where(name: "WWF").first
 project.tag_list = "Web, Conseil, Design"
 project.skill_list = "Web, Conseil, Design"
 project.tache = "Publier sur l'Apple store"
-project.status = "unstarted"
+project.status = "created"
 project.save!
 
 project = Project.new
@@ -124,7 +125,7 @@ project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
-project.status = "current"
+project.status = "pending"
 project.save!
 
 puts 'Projects created!'
