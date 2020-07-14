@@ -37,10 +37,26 @@ const projectsStatusChart = () => {
   });
 }
 
+const userProjectsStatusChart = () => {
+  const userProjectsStatusChartTarget = document.getElementById('user-projects-status-chart');
+  const data = JSON.parse(userProjectsStatusChartTarget.dataset.userProjectsStatusChart);
+  new Chart(userProjectsStatusChartTarget, {
+    type: 'bar',
+    data: data,
+    options: {
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+    }
+  });
+}
+
+
 const adminCharts = () => {
   if (document.getElementById('user-chart')) { userChart() }
   if (document.getElementById('skills-chart')) { skillsChart() }
   if (document.getElementById('projects-status-chart')) { projectsStatusChart() }
+  if (document.getElementById('user-projects-status-chart')) { userProjectsStatusChart() }
 }
 
 export { adminCharts };
+

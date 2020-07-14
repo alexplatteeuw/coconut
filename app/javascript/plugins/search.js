@@ -17,7 +17,7 @@
     const searchForm = document.querySelector('.simple_form.search');
     if (searchForm) {
       const searchInput = document.getElementById('search_query');
-      document.addEventListener('keyup', (e) => {
+      document.addEventListener('input', (e) => {
         const queryValue = searchInput.value;
         fetchProjects(queryValue);
       })

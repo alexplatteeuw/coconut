@@ -1,4 +1,4 @@
-<div class="container pt-4">
+<div class="container pt-4 id="first-row>
   <h3 class="p-4">Staffing Info</h3>
   <div class="row pb-4">
     <div class="col">
@@ -12,6 +12,20 @@
       </div>
     </div>
   </div>
+     <div class="col d-flex justify-content-center">
+
+
+            <div class="counter m-3">
+                <div class="card-title"> Total projets </div>
+                <div> <%= @projects.count %> </div>
+              </div>
+
+            <div class="counter-2 m-3">
+                <div class="card-title"> Nombre d'heures financées</div>
+                <div> 60 heures </div>
+              </div>
+
+    </div>
   <h3 class="p-4">Statuts des projets</h3>
   <div class="row">
     <div class="col">

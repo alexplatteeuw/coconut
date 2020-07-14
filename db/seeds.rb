@@ -138,8 +138,28 @@ puts 'Projects created!'
 puts 'Creating a company...'
 
 company = Company.new
-company.name = "Coconut"
+company.name = "Instagram"
 company.address = "16 villa Gaudelet 75011 Paris"
+company.save!
+
+company = Company.new
+company.name = "Pixel me"
+company.address = "1 rue ravignan, Paris"
+company.save!
+
+company = Company.new
+company.name = "Monoprix"
+company.address = "2 rue ravignan, Paris"
+company.save!
+
+company = Company.new
+company.name = "Quiiet"
+company.address = "6 rue ravignan, Paris"
+company.save!
+
+company = Company.new
+company.name = "Bergamotte"
+company.address = "10 rue ravignan, Paris"
 company.save!
 
 puts 'Company created!'
@@ -170,7 +190,7 @@ user.job = "Developpeur"
 user.admin = false
 user.address = "25 rue du javelot 75013 Paris"
 user.skill_list = "CSS, JS, Design"
-user.company = Company.first
+user.company = Company.last
 user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
 user.credits = 40
 user.save!
@@ -200,4 +220,5 @@ reservation.project = project
 reservation.save!
 
 puts 'Reservation created!'
+
 
