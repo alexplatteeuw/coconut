@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_102510) do
+ActiveRecord::Schema.define(version: 2020_07_14_201100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,18 @@ ActiveRecord::Schema.define(version: 2020_07_11_102510) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.date "start_time"
+    t.date "end_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_events_on_project_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -228,6 +240,8 @@ ActiveRecord::Schema.define(version: 2020_07_11_102510) do
   add_foreign_key "bookings", "projects"
   add_foreign_key "bookings", "users"
   add_foreign_key "chatrooms", "projects"
+  add_foreign_key "events", "projects"
+  add_foreign_key "events", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
