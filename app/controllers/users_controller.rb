@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @data_users_availables = user_booking_data.to_json
     @data_skills_availables = user_skills_data.to_json
     @data_projects_status = projects_status.to_json
-     @data_user_projects_status = user_projects_status.to_json
+    @data_user_projects_status = user_projects_status.to_json
   end
 
   def user_booking_data
@@ -33,15 +33,15 @@ class UsersController < ApplicationController
       labels: labels,
       datasets: [{
         data: count,
-        backgroundColor: ["pink", "orange", "white","purple","yellow","brown"]
+        backgroundColor: ["pink", "orange", "white", "purple", "yellow", "brown"]
       }]
     }
   end
 
   def projects_status
-    unstarted_projects = Project.where(status: "unstarted")
-    current_projects = Project.where(status: "current")
-    completed_projects = Project.where(status: "completed")
+    unstarted_projects = Project.created
+    current_projects = Project.pending
+    completed_projects = Project.completed
 
     {
       datasets: [
@@ -66,29 +66,28 @@ class UsersController < ApplicationController
   end
 
     def user_projects_status
-    unstarted_projects = @myprojects.where(status: "unstarted")
-    current_projects = @myprojects.where(status: "current")
-    completed_projects = @myprojects.where(status: "completed")
+      unstarted_projects = @myprojects.created
+      current_projects = @myprojects.pending
+      completed_projects = @myprojects.completed
 
-    {
-      datasets: [
-        {
-          label: "Projets à lancer",
-          data: [unstarted_projects.count],
-          backgroundColor: ["#3351F5"]
-        },
-        {
-          label: "Projets en cours",
-          data: [current_projects.count],
-          backgroundColor: ["#DDE0F3"]
-        },
-        {
-          label: "Projets terminés",
-          data: [completed_projects.count],
-          backgroundColor: ["grey"]
-        }
-      ]
-    }
+      {
+        datasets: [
+          {
+            label: "Projets à lancer",
+            data: [unstarted_projects.count],
+            backgroundColor: ["#3351F5"]
+          },
+          {
+            label: "Projets en cours",
+            data: [current_projects.count],
+            backgroundColor: ["#DDE0F3"]
+          },
+          {
+            label: "Projets terminés",
+            data: [completed_projects.count],
+            backgroundColor: ["grey"]
+          }
+        ]
+      }
   end
-
 end

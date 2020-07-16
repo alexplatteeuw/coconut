@@ -33,7 +33,14 @@ const projectsStatusChart = () => {
     options: {
       maintainAspectRatio: false,
       aspectRatio: 1,
-    }
+      scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+    },
   });
 }
 
