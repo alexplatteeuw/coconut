@@ -67,7 +67,6 @@ project.skill_list = "Informatique, Web, Design"
 project.tache = "Créer formulaire de contact"
 project.status = "created"
 project.nbtaches = "8"
-project.events = "9 Septembre, 12h"
 project.save!
 
 project = Project.new
@@ -81,7 +80,6 @@ project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
 project.status = "created"
 project.nbtaches = "2"
-project.events = "1 Octobre, 9h"
 project.save!
 
 project = Project.new
@@ -94,7 +92,6 @@ project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
 project.nbtaches = "11"
-project.events = "14 Aout, 16h"
 project.status = "completed"
 project.save!
 
@@ -108,7 +105,6 @@ project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
 project.tache = "Réserver son créneau"
 project.nbtaches = "8"
-project.events = "30 Juillet, 10h"
 project.status = "completed"
 project.save!
 
@@ -123,7 +119,6 @@ project.skill_list = "Web, Conseil, Design"
 project.tache = "Publier sur l'Apple store"
 project.status = "created"
 project.nbtaches = "3"
-project.events = "19 Novembre, 18h"
 project.save!
 
 project = Project.new
@@ -137,7 +132,6 @@ project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
 project.status = "pending"
 project.nbtaches = "4"
-project.events = "3 Septembre, 9h"
 project.save!
 
 puts 'Projects created!'
