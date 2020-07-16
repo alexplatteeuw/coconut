@@ -162,6 +162,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_175359) do
     t.string "video_url"
     t.string "tache"
     t.integer "status", default: 0
+    t.integer "nbtaches"
+    t.string "events"
     t.index ["charity_id"], name: "index_projects_on_charity_id"
   end
 

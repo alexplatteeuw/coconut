@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:documents)
+    params.require(:project).permit(documents: [])
   end
 
 
