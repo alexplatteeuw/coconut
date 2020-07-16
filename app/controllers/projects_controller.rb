@@ -4,18 +4,18 @@ class ProjectsController < ApplicationController
     if current_user.admin?
       if params[:q].present?
         sql_query = "name ILIKE :query OR description ILIKE :query"
-        @projects = policy_scope(Project).where(sql_query, query: "%#{params[:q]}%")
+        @projects = policy_scope(Project).created.where(sql_query, query: "%#{params[:q]}%")
       elsif params[:tag].present?
-        @projects = policy_scope(Project).tagged_with(params[:tag]).uniq
+        @projects = policy_scope(Project).created.tagged_with(params[:tag]).uniq
       else
-        @projects = policy_scope(Project).order(created_at: :desc)
+        @projects = policy_scope(Project).created.order(created_at: :desc)
       end
     else
       @projects = current_user.company.all_favorited
       if params[:q].present?
-        @projects = @projects.select {|project| project.name.include? params[:q]}
+        @projects = @projects.select { |project| project.name.include? params[:q] }
       elsif params[:tag].present?
-        @projects = @projects.select{|project| project.skill_list.include? params[:tag]}
+        @projects = @projects.select { |project| project.skill_list.include? params[:tag] }
       end
     end
 
@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
 
   def completedprojects
     authorize Project.new
-    @projects = current_user.projects.where(status: :unstarted)
+    @projects = current_user.projects.created
   end
 
   def update
@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:documents)
+    params.require(:project).permit(documents: [])
   end
 
 
