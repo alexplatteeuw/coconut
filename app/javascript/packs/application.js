@@ -35,8 +35,9 @@ import { initChatroomCable } from "../channels/chatroom_channel"
 import { initCalendar } from "../plugins/fullCalendar"
 
 document.addEventListener('turbolinks:load', () => {
-
-  initCalendar();
+  if (document.getElementById('calendardiv')) {
+    initCalendar();
+  }
 
   initChatroomCable();
 

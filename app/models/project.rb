@@ -3,7 +3,9 @@ class Project < ApplicationRecord
   has_many :reservations
   has_many_attached :documents
   has_many :users, -> { distinct }, through: :reservations
+  has_many :events, dependent: :destroy
   has_one :chatroom, dependent: :destroy
+
   acts_as_taggable_on :tags, :skills
 
   STATUSES = ["created", "pending", "completed"]
