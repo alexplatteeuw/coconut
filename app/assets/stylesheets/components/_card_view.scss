@@ -1,0 +1,59 @@
+.card_view {
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  height: 400px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.card_view h2 {
+  font-size: 22px;
+  text-align: center;
+  padding: 13px;
+  color: $cocoblueprimary;
+}
+
+.card_view h3 {
+  font-size: 16px;
+  text-align: center;
+  padding: 13px;
+  color: $cocoblueprimarydark;
+}
+
+.card_view p {
+ margin: 0px;
+ font-size: 12px;
+}
+
+.avatartar {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    padding: 8px;
+
+    background: #fff;
+    border: 3px solid $cocoblueprimary;
+    color: $cocoblueprimary;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}
+
+.numberCircle2 {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    padding: 8px;
+
+    background: #fff;
+    border: 3px solid $cocomediumgrey;
+    color: $cocomediumgrey;
+    text-align: center;
+
+    font: 29px Arial, sans-serif;
+}

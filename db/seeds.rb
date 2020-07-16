@@ -53,7 +53,7 @@ charity.save!
 
 puts 'Charities created!'
 
-puts 'Creating 3 projects belonging to the same charity...'
+puts 'Creating 6 projects belonging to the same charity...'
 
 project = Project.new
 project.name = "Refonte du site internet"
@@ -63,6 +63,9 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
+project.tache = "Créer formulaire de contact"
+project.nbtaches = "8"
+project.events = "9 Septembre, 12h"
 project.status = "unstarted"
 project.save!
 
@@ -74,6 +77,9 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
+project.tache = "Vérifier la jurisprudence"
+project.nbtaches = "2"
+project.events = "1 Octobre, 9h"
 project.status = "unstarted"
 project.save!
 
@@ -85,6 +91,9 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
+project.tache = "Contacter le gestionnaire de réseau"
+project.nbtaches = "11"
+project.events = "14 Aout, 16h"
 project.status = "completed"
 project.save!
 
@@ -96,6 +105,9 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Perce Neige").first
 project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
+project.tache = "Réserver son créneau"
+project.nbtaches = "8"
+project.events = "30 Juillet, 10h"
 project.status = "completed"
 project.save!
 
@@ -107,6 +119,9 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "WWF").first
 project.tag_list = "Web, Conseil, Design"
 project.skill_list = "Web, Conseil, Design"
+project.tache = "Publier sur l'Apple store"
+project.nbtaches = "3"
+project.events = "19 Novembre, 18h"
 project.status = "unstarted"
 project.save!
 
@@ -118,6 +133,9 @@ project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v159386912
 project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.nbtaches = "4"
+project.events = "3 Septembre, 9h"
 project.status = "current"
 project.save!
 
@@ -174,7 +192,7 @@ user.last_name = "Lemaire"
 user.email = "clem@lewagon.org"
 user.password = "clement"
 user.description = "Ingénieur informatique qui connaît par coeur le setup du Wagon"
-user.job = "Ingénieur informatique"
+user.job = "Developpeur"
 user.admin = false
 user.address = "25 rue du javelot 75013 Paris"
 user.skill_list = "CSS, JS, Design"
@@ -189,12 +207,42 @@ user.last_name = "Paris"
 user.email = "pauline@lewagon.org"
 user.password = "pauline"
 user.description = "Super Ingénieur informatique chez Monop"
-user.job = "Ingénieur informatique"
+user.job = "Developpeur"
 user.admin = false
 user.address = "25 rue des boulets"
 user.skill_list = "CSS, JS, Design"
 user.company = Company.first
 user.avatar_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1586873952/kfn110hfwqteucjluzwx.jpg"
+user.credits = 40
+user.save!
+
+user = User.new
+user.first_name = "Bathélémy"
+user.last_name = "Boillot"
+user.email = "barthelemy@lewagon.org"
+user.password = "barthelemy"
+user.description = "King de l'algo ayant le coeur sur la main"
+user.job = "Dev Fullstack"
+user.admin = false
+user.address = "45 avenue de wagram"
+user.skill_list = "Ruby, JS, React"
+user.company = Company.first
+user.avatar_url = "https://avatars2.githubusercontent.com/u/58515521?v=4"
+user.credits = 40
+user.save!
+
+user = User.new
+user.first_name = "Alexandre"
+user.last_name = "Platteeuw"
+user.email = "alex@lewagon.org"
+user.password = "alexandre"
+user.description = "Génie du Java script"
+user.job = "Dev Fullstack"
+user.admin = false
+user.address = "2 rue de la bastille"
+user.skill_list = "Ruby, JS, React"
+user.company = Company.first
+user.avatar_url = "https://avatars0.githubusercontent.com/u/57015378?v=4"
 user.credits = 40
 user.save!
 
