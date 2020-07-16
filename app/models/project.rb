@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   has_many :reservations
   has_many_attached :documents
   has_many :users, -> { distinct }, through: :reservations
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
   acts_as_taggable_on :tags, :skills
 
   validates :name, :address, :description, presence: true
