@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="d-flex justify-content-around">
+      <div class="card_ressource">
+        <h3>Ajoutez une ressource</h3>
+        <p>Partagez un fichier csv, jpg ou pdf</p>
+        <%= simple_form_for(project) do |f| %>
+          <%= f.input :documents, as: :file, input_html:{multiple: true} %>
+          <%= f.button :submit, "Télécharger", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="card_ressource">
+        <% @project.documents.each do |doc| %>
+          <p>
+            <%= link_to rails_blob_path(doc, disposition: "attachment"), target: "_blank" do %>
+              <i class="fas fa-file-download"></i>
+            <% end %>
+            <%= link_to("#{doc.filename}", rails_blob_path(doc, disposition: 'attachment'))  %>
+          </p>
+        <% end %>
+      </div>
+  </div>
+</div>

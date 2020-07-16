@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_07_16_172219) do
 
   # These are extensions that must be enabled in order to support this database
@@ -173,8 +174,10 @@ ActiveRecord::Schema.define(version: 2020_07_16_172219) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_url"
     t.string "video_url"
-    t.string "status", default: "unstarted"
     t.string "tache"
+    t.integer "status", default: 0
+    t.integer "nbtaches"
+    t.string "events"
     t.index ["charity_id"], name: "index_projects_on_charity_id"
   end
 

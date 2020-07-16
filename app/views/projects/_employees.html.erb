@@ -1,21 +1,25 @@
-<h3>Employés travaillant sur le projet :</h3>
 
-<div class="d-flex flex-row mt-3">
+<div>
+   <h4 class="my-3"> Autres participants au projet :</h4>
   <% employees.each do |employee| %>
-    <div class="card-employee m-2 bg-light">
-      <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
-      <p>
-        <%= "#{employee.first_name} #{employee.last_name}" %>
-      </p>
-      <p>
-        <%= "#{employee.address}" %>
-      </p>
-      <p>Compétences de l'employé :</p>
-      <ul>
+    <div class="d-flex flex-row justify-content-start">
+      <div>
+        <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
+      </div>
+      <div class="ml-3">
+        <p>
+          <%= "#{employee.first_name} #{employee.last_name}" %>
+        </p>
+        <p>
+          <%= "#{employee.job}" %>
+        </p>
+
+      </div>
+     <!--  <ul>
         <% employee.skill_list.each do |skill| %>
           <li><%= skill %></li>
         <% end %>
-      </ul>
+      </ul> -->
     </div>
   <% end %>
 </div>

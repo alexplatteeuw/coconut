@@ -2,10 +2,12 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @projects = policy_scope(Project).order(created_at: :desc)
+    @myprojects = current_user.projects
     authorize @user
     @data_users_availables = user_booking_data.to_json
     @data_skills_availables = user_skills_data.to_json
     @data_projects_status = projects_status.to_json
+    @data_user_projects_status = user_projects_status.to_json
   end
 
   def user_booking_data
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
       labels: ["Employés en mission", "Employés disponibles pour une mission"],
       datasets: [{
         data: [unavailable_user.length, user.length - unavailable_user.length],
-        backgroundColor: ["hsl(231, 91%, 58%)", "hsl(50, 5%, 83%)"]
+        backgroundColor: ["#DDE0F3", "#3351F5"]
       }]
     }
   end
@@ -31,34 +33,61 @@ class UsersController < ApplicationController
       labels: labels,
       datasets: [{
         data: count,
-        backgroundColor: ["hsl(231, 91%, 58%)", "hsl(50, 5%, 83%)"]
+        backgroundColor: ["pink", "orange", "white", "purple", "yellow", "brown"]
       }]
     }
   end
 
   def projects_status
-    unstarted_projects = Project.where(status: "unstarted")
-    current_projects = Project.where(status: "current")
-    completed_projects = Project.where(status: "completed")
+    unstarted_projects = Project.created
+    current_projects = Project.pending
+    completed_projects = Project.completed
 
     {
       datasets: [
+
         {
           label: "Projets à lancer",
           data: [unstarted_projects.count],
-          backgroundColor: ["hsl(231, 91%, 58%)"]
+          backgroundColor: ["#3351F5"]
         },
         {
           label: "Projets en cours",
           data: [current_projects.count],
-          backgroundColor: ["hsl(50, 5%, 66%)"]
+          backgroundColor: ["#DDE0F3"]
         },
         {
           label: "Projets terminés",
           data: [completed_projects.count],
-          backgroundColor: ["hsl(50, 5%, 83%)"]
+          backgroundColor: ["grey"]
         }
       ]
     }
+  end
+
+    def user_projects_status
+      unstarted_projects = @myprojects.created
+      current_projects = @myprojects.pending
+      completed_projects = @myprojects.completed
+
+      {
+        datasets: [
+          {
+            label: "Projets à lancer",
+            data: [unstarted_projects.count],
+            backgroundColor: ["#3351F5"]
+          },
+          {
+            label: "Projets en cours",
+            data: [current_projects.count],
+            backgroundColor: ["#DDE0F3"]
+          },
+          {
+            label: "Projets terminés",
+            data: [completed_projects.count],
+            backgroundColor: ["grey"]
+          }
+        ]
+      }
   end
 end
