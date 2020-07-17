@@ -31,7 +31,6 @@ import "bootstrap";
 // Internal imports, e.g:
 import { adminCharts } from '../plugins/charts';
 import { initChart } from "../plugins/initChart";
-import { initInstantSearch } from "../plugins/search";
 import { initSelect2 } from "../plugins/init_select2"
 import { initChatroomCable } from "../channels/chatroom_channel"
 import { initCalendar } from "../plugins/fullCalendar"
@@ -53,7 +52,6 @@ document.addEventListener('turbolinks:load', () => {
   $(document).ready(function () {
 
     adminCharts();
-    // initInstantSearch();
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');

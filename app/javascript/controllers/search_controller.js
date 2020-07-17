@@ -1,6 +1,5 @@
-import Rails from '@rails/ujs';
-
 import { Controller } from "stimulus"
+import Rails from '@rails/ujs';
 
 export default class extends Controller {
 
@@ -8,13 +7,9 @@ export default class extends Controller {
 
   query() {
 
-    const element = this.nameTarget
-    const name = element.value
-    const url = `/projects?q=${name}`
-
     Rails.ajax({
       type: 'GET',
-      url :url,
+      url : `/projects?q=${this.nameTarget.value}`,
       dataType: 'json',
       success: (data) => {
         this.entriesTarget.innerHTML = data.html
