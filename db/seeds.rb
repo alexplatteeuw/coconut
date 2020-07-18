@@ -236,13 +236,13 @@ user.credits = 40
 user.save!
 
 user = User.new
-user.first_name = "Bathélémy"
+user.first_name = "Barthélémy"
 user.last_name = "Boillot"
 user.email = "barthelemy@lewagon.org"
 user.password = "barthelemy"
 user.description = "King de l'algo ayant le coeur sur la main"
 user.job = "Dev Fullstack"
-user.admin = false
+user.admin = true
 user.address = "45 avenue de wagram"
 user.skill_list = "Ruby, JS, React"
 user.company = Company.first
