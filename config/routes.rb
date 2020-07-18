@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'projects#index'
+  root to: 'users#show'
   devise_for :users
 
   resources :projects, only: [:index, :show, :update] do
@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get 'favorites', to: 'projects#favorites'
   get 'dashboard', to: 'users#show'
   get 'tagged', to: "projects#index", as: :tagged
+  get 'employees', to: "projects#employees"
 
 end

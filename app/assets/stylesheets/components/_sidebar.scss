@@ -13,19 +13,30 @@
   text-decoration: none;
 }
 
-.sidebar-brand a:visited {
-  color: $cocomediumgrey;
-  text-decoration: none;
-}
+// .sidebar-brand a:visited {
+//   color: $cocomediumgrey;
+//   text-decoration: none;
+// }
 
 .sidebar-brand a:hover {
   text-decoration: none;
   color: $cocomediumgrey;
 }
 
-.sidebar-brand a:active {
-  text-decoration: none;
-  color: $cocomediumgrey;
+.sidebar-brand li {
+  padding: 8px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    text-decoration: none;
+    background-color: $cocoblueprimary;
+    border-radius: 10px;
+    a, i {
+      color: white;
+    }
+  }
 }
 
 h4 {
@@ -144,4 +155,12 @@ ul.sidebar-brand {
 
 #sidebar {
   position: relative;
+}
+
+#sidebar h2 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 22px;
+  font-weight: 500;
+  color: $cocodarkgrey;
 }
