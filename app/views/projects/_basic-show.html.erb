@@ -1,12 +1,12 @@
 
 <div class="container">
-  <div class= "my-5 d-flex flex-row align-items-center">
+  <div class= "px-5 pt-5 d-flex flex-row align-items-center">
      <div class="card-logo">
         <%= image_tag project.charity.logo %>
       </div>
 
       <div class="d-flex justify-content-between flex-grow-1">
-        <div class="card-titles d-flex flex-column ml-4">
+        <div class="card-titles d-flex flex-column ml-4 py-5 ml-5">
           <h2 class="m-0">
             <%= project.name %>
           </h2>
@@ -23,20 +23,18 @@
 
   </div>
 
-  <div class="row">
-    <div class="col">
 
-      <h4>Détails de la mission:</h4>
+  <div class="row m-0">
+    <div class="col p-5">
+
+      <h4 class="mb-4">Détails de la mission:</h4>
       <%= project.description %>
     </div>
 
-
     <hr class="vertical-line-show"/>
 
-    <div class="col">
-<!--       <h2 class="m-5"> 👉 informations utiles </h2> -->
-
-      <div class="card-tags mx-5">
+    <div class="col p-5">
+      <div class="card-tags">
         <div class="d-flex flex-column">
           <div>
             <p>Compétences</p>
@@ -73,12 +71,12 @@
                   Pas de crédit disponible
                 </p>
             <% elsif !current_user.projects.include? @project %>
-                <%= link_to 'Postuler', new_project_reservation_path(project), class: 'btn btn-ghost' %>
+              <button type="button" class="btn btn-dashboard" data-toggle="modal" data-target="#exampleModal">
+                Postuler
+              </button>
             <% end %>
-
+            <%= render 'reservations/credits' %>
           </div>
-
-
         </div>
       </div>
     </div>
