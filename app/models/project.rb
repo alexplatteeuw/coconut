@@ -8,7 +8,7 @@ class Project < ApplicationRecord
 
   acts_as_taggable_on :tags, :skills
 
-  STATUSES = ["created", "pending", "completed"]
+  STATUSES = ["created", "preselected", "pending", "completed"]
   enum status: STATUSES
 
   validates :name, :address, :description, presence: true
