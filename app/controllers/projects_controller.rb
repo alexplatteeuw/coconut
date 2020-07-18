@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
 
   def completedprojects
     authorize Project.new
-    @projects = current_user.projects.created
+    @projects = Project.completed
   end
 
   def update

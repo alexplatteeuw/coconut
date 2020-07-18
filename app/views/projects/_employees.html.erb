@@ -1,4 +1,4 @@
-
+<% unless employees.empty? %>
 <div>
    <h4 class="my-3"> Autres participants au projet :</h4>
   <% employees.each do |employee| %>
@@ -13,9 +13,9 @@
         <p>
           <%= "#{employee.job}" %>
         </p>
-
       </div>
     </div>
   <% end %>
 </div>
+<% end %>
 
