@@ -41,6 +41,7 @@ class ProjectsController < ApplicationController
     @projects = current_user.projects.completed + current_user.projects.preselected
   end
 
+
   def show
     @project = Project.find(params[:id])
     @user = current_user
