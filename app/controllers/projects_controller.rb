@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 
   def myprojects
     authorize Project.new
-    @projects = current_user.projects
+    @projects = (current_user.projects.completed && current_user.projects.pending)
   end
 
   def show
@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
 
   def completedprojects
     authorize Project.new
-    @projects = current_user.projects.created
+    @projects = Project.completed
   end
 
   def update

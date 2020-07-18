@@ -78,7 +78,7 @@ project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
-project.status = "created"
+project.status = "completed"
 project.nbtaches = "2"
 project.save!
 
@@ -91,7 +91,7 @@ project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
-project.status = "created"
+project.status = "completed"
 project.nbtaches = "11"
 project.save!
 
