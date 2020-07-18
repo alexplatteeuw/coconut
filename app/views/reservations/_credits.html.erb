@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [@project, @reservation] do |f| %>
-          <%= f.input :credits, label: "Combien de crédits souhaitez-vous affecter à ce projet ?", collection: 1..current_user.credits %>
+          <%= f.input :credits, label: "Combien de crédits souhaitez-vous affecter à ce projet ?", collection: 1..current_user.credits unless current_user.credits.nil? %>
           <div class="mt-4">
             <%= f.input :skill_list, label: "Quelles compétences souhaitez-vous mettre à contribution ?", collection: @project.skill_list, as: :check_boxes, input_html: {class: "select2-multiple ", multiple: true, value: f.object.skill_list.join(",")} %>
           </div>
