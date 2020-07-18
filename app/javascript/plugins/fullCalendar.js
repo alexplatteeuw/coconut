@@ -3,6 +3,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
+import frLocale from '@fullcalendar/core/locales/fr';
+
 // import css from '@fullcalendar/common/main';
 
 
@@ -13,6 +15,7 @@ const initCalendar = () => {
   const projectId = calendarEl.dataset.project;
 
   const calendar = new Calendar(calendarEl, {
+    locale: frLocale,
     plugins: [ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ],
     initialView: 'dayGridMonth',
     headerToolbar: {
