@@ -1,12 +1,11 @@
 class ProjectsController < ApplicationController
   def index
     skip_policy_scope
-    sql_query = "name ILIKE :query OR description ILIKE :query"
 
     if current_user.admin?
-      find_projects(created)
+      find_projects(Project.created)
     else
-      find_projects(created)
+      find_projects(Project.preselected)
     end
 
     respond_to do |format|
@@ -15,15 +14,14 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def find_projects(status)
+  def find_projects(projects)
+    sql_query = "name ILIKE :query OR description ILIKE :query"
     if params[:q].present?
-      @projects = Project."#{status}".where(sql_query, query: "%#{params[:q]}%")
-    # ou qu'il recherche par tag
+      @projects = projects.where(sql_query, query: "%#{params[:q]}%")
     elsif params[:tag].present?
-      @projects = Project.status.tagged_with(params[:tag]).uniq
-    # autrement : afficher tous les projets
+      @projects = projects.tagged_with(params[:tag]).uniq
     else
-      @projects = Project.status.order(created_at: :desc)
+      @projects = projects.order(created_at: :desc)
     end
   end
 

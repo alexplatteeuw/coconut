@@ -65,7 +65,7 @@ project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
 project.tache = "Créer formulaire de contact"
-project.status = "created"
+project.status = "preselected"
 project.save!
 
 project = Project.new
@@ -89,7 +89,7 @@ project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
-project.status = "completed"
+project.status = "created"
 project.save!
 
 project = Project.new
@@ -101,7 +101,7 @@ project.charity = Charity.where(name: "Perce Neige").first
 project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
 project.tache = "Réserver son créneau"
-project.status = "completed"
+project.status = "created"
 project.save!
 
 project = Project.new
@@ -126,6 +126,30 @@ project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
 project.status = "pending"
+project.save!
+
+project = Project.new
+project.name = "Completed1"
+project.description = "Completed1"
+project.address = "4 rue Pierre 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.tag_list = "Juridique, Conseil, Redaction"
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed2"
+project.description = "Completed2"
+project.address = "4 rue Pierre 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.tag_list = "Juridique, Conseil, Redaction"
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
 project.save!
 
 puts 'Projects created!'

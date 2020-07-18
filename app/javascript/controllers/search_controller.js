@@ -12,6 +12,7 @@ export default class extends Controller {
       url : `/projects?q=${this.nameTarget.value}`,
       dataType: 'json',
       success: (data) => {
+        console.log(data)
         this.entriesTarget.innerHTML = data.html
       }
     })
