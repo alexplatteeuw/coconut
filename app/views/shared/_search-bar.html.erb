@@ -1,4 +1,4 @@
-<%= simple_form_for :search, url: projects_path, method: :get do |f| %>
+<%= simple_form_for :search, url: (params[:action] == 'index' ? projects_path : favorites_path) , method: :get do |f| %>
   <div class="search-form-control form-group">
     <input class="form-control string required" type="text" name="q" data-target="search.name" data-action="input->search#query"/>
     <button type="submit" class="btn btn-flat">

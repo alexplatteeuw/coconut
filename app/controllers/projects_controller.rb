@@ -14,20 +14,26 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def find_projects(projects)
-    sql_query = "name ILIKE :query OR description ILIKE :query"
-    if params[:q].present?
-      @projects = projects.where(sql_query, query: "%#{params[:q]}%")
-    elsif params[:tag].present?
-      @projects = projects.tagged_with(params[:tag]).uniq
-    else
-      @projects = projects.order(created_at: :desc)
+  def favorite
+    @user = current_user
+    @project = Project.find(params[:id])
+    authorize @project
+    if @project.status == "created"
+      @project.update(status: "preselected")
+    elsif @project.status == "preselected"
+      @project.update(status: "created")
     end
+    redirect_to request.referrer
   end
 
   def favorites
     authorize Project.new
-    @projects = Project.preselected
+    find_projects(Project.preselected)
+
+    respond_to do |format|
+      format.json { render json: { html: render_to_string(partial: "shared/projects_container", locals: { projects: @projects }, formats: [:html]) } }
+      format.html
+    end
   end
 
   def myprojects
@@ -42,18 +48,6 @@ class ProjectsController < ApplicationController
     @reservation = Reservation.new
     @project.chatroom = Chatroom.new if @project.chatroom.nil?
     authorize @project
-  end
-
-  def favorite
-    @user = current_user
-    @project = Project.find(params[:id])
-    authorize @project
-    if @project.status == "created"
-      @project.update(status: "preselected")
-    elsif @project.status == "preselected"
-      @project.update(status: "created")
-    end
-    redirect_to request.referrer
   end
 
   def completedprojects
@@ -76,5 +70,16 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit("status", documents: [])
+  end
+
+  def find_projects(projects)
+    sql_query = "name ILIKE :query OR description ILIKE :query"
+    if params[:q].present?
+      @projects = projects.where(sql_query, query: "%#{params[:q]}%")
+    elsif params[:tag].present?
+      @projects = projects.tagged_with(params[:tag]).uniq
+    else
+      @projects = projects.order(created_at: :desc)
+    end
   end
 end
