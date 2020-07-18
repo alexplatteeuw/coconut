@@ -9,11 +9,10 @@ export default class extends Controller {
 
     Rails.ajax({
       type: 'GET',
-      url : `/projects?q=${this.nameTarget.value}`,
+      url : `${window.location.href}?q=${this.nameTarget.value}`,
       dataType: 'json',
       success: (data) => {
-        console.log(data)
-        this.entriesTarget.innerHTML = data.html
+        setTimeout(() => {this.entriesTarget.innerHTML = data.html}, 200);
       }
     })
   }
