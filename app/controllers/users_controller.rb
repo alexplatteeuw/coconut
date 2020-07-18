@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @projects = policy_scope(Project).order(created_at: :desc)
-    @myprojects = current_user.projects
+    @myprojects = current_user.projects.preselected
     authorize @user
     @data_users_availables = user_booking_data.to_json
     @data_skills_availables = user_skills_data.to_json

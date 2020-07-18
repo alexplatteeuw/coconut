@@ -4,11 +4,13 @@
   <div class="row pb-4" >
     <div class="col d-flex justify-content-start">
        <% @myprojects.each do |p| %>
-          <div class="mini-card m-3">
-            <div class="card-logo">
-              <%= image_tag p.charity.logo %>
+          <a href="<%= project_path(p) %>">
+            <div class="mini-card m-3">
+              <div class="card-logo">
+                <%= image_tag p.charity.logo %>
+              </div>
             </div>
-          </div>
+          </a>
         <% end %>
     </div>
 
