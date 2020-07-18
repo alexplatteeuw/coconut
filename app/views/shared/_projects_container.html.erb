@@ -1,5 +1,11 @@
 <div class="cards">
-  <% projects.each do |project| %>
-    <%= render "shared/card-project", project: project %>
+  <% unless projects.empty? %>
+    <% projects.each do |project| %>
+      <%= render "shared/card-project", project: project %>
+    <% end %>
+  <% else %>
+  <div class="pt-3">
+    <em>Il n'y a aucun projet retenu pour le moment !</em>
+  </div>
   <% end %>
 </div>

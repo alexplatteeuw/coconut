@@ -1,22 +1,12 @@
 class ProjectsController < ApplicationController
   def index
     skip_policy_scope
+    sql_query = "name ILIKE :query OR description ILIKE :query"
+
     if current_user.admin?
-      if params[:q].present?
-        sql_query = "name ILIKE :query OR description ILIKE :query"
-        @projects = policy_scope(Project).created.where(sql_query, query: "%#{params[:q]}%")
-      elsif params[:tag].present?
-        @projects = policy_scope(Project).created.tagged_with(params[:tag]).uniq
-      else
-        @projects = policy_scope(Project).created.order(created_at: :desc)
-      end
+      find_projects(created)
     else
-      @projects = current_user.company.all_favorited
-      if params[:q].present?
-        @projects = @projects.select { |project| project.name.include? params[:q] }
-      elsif params[:tag].present?
-        @projects = @projects.select { |project| project.skill_list.include? params[:tag] }
-      end
+      find_projects(created)
     end
 
     respond_to do |format|
@@ -25,10 +15,21 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def find_projects(status)
+    if params[:q].present?
+      @projects = Project."#{status}".where(sql_query, query: "%#{params[:q]}%")
+    # ou qu'il recherche par tag
+    elsif params[:tag].present?
+      @projects = Project.status.tagged_with(params[:tag]).uniq
+    # autrement : afficher tous les projets
+    else
+      @projects = Project.status.order(created_at: :desc)
+    end
+  end
+
   def favorites
-    # skip_authorization
     authorize Project.new
-    @projects = current_user.company.all_favorited
+    @projects = Project.preselected
   end
 
   def myprojects
@@ -49,10 +50,10 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project = Project.find(params[:id])
     authorize @project
-    if @user.company.favorited?(@project)
-      @user.company.unfavorite(@project)
-    else
-      @user.company.favorite(@project)
+    if @project.status == "created"
+      @project.update(status: "preselected")
+    elsif @project.status == "preselected"
+      @project.update(status: "created")
     end
     redirect_to request.referrer
   end
@@ -76,8 +77,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(documents: [])
+    params.require(:project).permit("status", documents: [])
   end
-
-
 end
