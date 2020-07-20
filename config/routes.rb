@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :chatrooms, only: :show do
       resources :messages, only: :create
     end
-    resources :events, only: [:index, :update]
+    resources :events, only: [:index, :update, :create]
   end
 
   get 'my-projects', to: 'projects#myprojects'

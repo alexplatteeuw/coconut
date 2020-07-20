@@ -11,6 +11,15 @@ class EventsController < ApplicationController
     @event.update(event_params)
   end
 
+  def create
+    @project = Project.find(params[:project_id])
+    @event = Event.new(event_params)
+    @event.project = @project
+    @event.user = current_user
+    authorize @event
+    @event.save
+  end
+
   private
 
   def event_params

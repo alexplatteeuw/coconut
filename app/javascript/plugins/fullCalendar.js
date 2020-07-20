@@ -26,7 +26,11 @@ const initCalendar = () => {
     nowIndicator: true,
     selectable: true,
     editable: true,
-    events: `/projects/${projectId}/events.json`,
+    eventSources: [
+       {
+         url: `/projects/${projectId}/events.json`, // use the `url` property
+       }
+     ],
     eventDrop: function( info ) {
       const end = info.event._instance.range.end;
       const start = info.event._instance.range.start;
@@ -41,10 +45,28 @@ const initCalendar = () => {
           "X-CSRF-Token": token
         },
         body: JSON.stringify({ end: end, start: start })
-      })
-        .then(data => console.log(data))
-        .then((data) => {
-        });
+      });
+    },
+
+    select: function (info) {
+      const title = prompt('Enter the title');
+      const end = info.end + 1;
+      const start = info.start + 1;
+
+      fetch(`/projects/${projectId}/events`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "X-CSRF-Token": token
+        },
+        body: JSON.stringify({ end: end, start: start, title: title })
+      });
+
+      calendar.unselect();
+    },
+    unselect: function () {
+      calendar.refetchEvents();
     }
   });
 
