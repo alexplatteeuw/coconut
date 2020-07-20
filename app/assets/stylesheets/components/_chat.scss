@@ -1,0 +1,32 @@
+.chat-container {
+    flex-grow: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.message-container img {
+    width: 40px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.message-content p:first-child {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.chat-header {
+    border-bottom: 1px solid rgb(240,240,240);
+}
+
+.chat-conversations {
+    flex-grow: 1;
+    padding: 16px 0;
+    overflow: scroll;
+}

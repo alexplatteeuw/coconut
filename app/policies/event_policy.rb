@@ -5,6 +5,10 @@ class EventPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    true
+  end
+
   def update?
     true
   end
