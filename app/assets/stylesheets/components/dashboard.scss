@@ -1,0 +1,9 @@
+.nav-tabs, .nav-tabs .nav-link {
+  border: none;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
+  border: none;
+  border-bottom: 3px solid $cocoblueprimary;
+  padding-bottom: 0.5rem;
+}
