@@ -1,33 +1,31 @@
 <div class="container pt-4" id="first-row">
-  <h3 class="p-4" > Mes projets en cours </h3>
-
+  <h3 class="p-4" > Mes projets en cours
+  </h3>
   <div class="row pb-4" >
     <div class="col d-flex justify-content-start">
-
-         <% @myprojects.each do |p| %>
+       <% @myprojects.each do |p| %>
+          <a href="<%= project_path(p) %>">
             <div class="mini-card m-3">
               <div class="card-logo">
                 <%= image_tag p.charity.logo %>
               </div>
             </div>
-          <% end %>
+          </a>
+        <% end %>
     </div>
 
-      <div class="col d-flex justify-content-center">
-
-            <div class="counter m-3">
-                <div class="card-title"> Total projets </div>
-                <div> <%= @myprojects.count %> </div>
-              </div>
-
-            <div class="counter-2 m-3">
-                <div class="card-title"> Nombre d'heures financées</div>
-                <div> 16 heures </div>
-              </div>
-
+    <div class="col d-flex justify-content-center">
+      <div class="counter m-3">
+        <div class="card-title"> Total projets </div>
+        <div> <%= @myprojects.count %> </div>
+      </div>
+      <div class="counter-2 m-3">
+        <div class="card-title"> Nombre d'heures financées</div>
+        <div> 16 heures </div>
+      </div>
     </div>
-
   </div>
+
   <h3 class="p-4"> Mon bilan </h3>
   <div class="row">
     <div class="col">
@@ -35,4 +33,5 @@
         <canvas id="user-projects-status-chart" data-user-projects-status-chart= "<%= @data_user_projects_status %>"></canvas>
       </div>
     </div>
+  </div>
 </div>

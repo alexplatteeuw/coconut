@@ -1,9 +1,7 @@
-<div class="container">
-  <div class="py-5">
-    <%= render "shared/search-bar" %>
-  </div>
-  <h2>Besoins des associations</h2>
-  <div id="projects-container">
+<div class="container" data-controller="search">
+  <h2 class="my-5">Besoins des associations</h2>
+  <%= render "shared/search-bar"%>
+  <div data-target="search.entries">
     <%= render "shared/projects_container", projects: @projects %>
   </div>
 </div>

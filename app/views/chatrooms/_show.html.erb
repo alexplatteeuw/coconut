@@ -1,12 +1,18 @@
-<div class="d-flex-flex-column">
-  <h1>#<%= project.name %></h1>
-  <div id="messages" data-chatroom-id="<%= chatroom.id %>">
+<div class="chat-container">
+  <div class="chat-header">
+    <h1>
+      <i class="fab fa-slack-hash"></i>
+      <%= project.name %>
+    </h1>
+  </div>
+  <div class="chat-conversations" id="messages" data-chatroom-id="<%= chatroom.id %>">
     <% chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
   </div>
-
-  <%= simple_form_for [ project, chatroom, message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{chatroom.name}" %>
-  <% end %>
+  <div class="chat-input">
+    <%= simple_form_for [ project, chatroom, message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Type your message here..." %>
+    <% end %>
+  </div>
 </div>

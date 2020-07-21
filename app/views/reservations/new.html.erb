@@ -1,5 +1,0 @@
-<%= simple_form_for [@project, @reservation] do |f| %>
-  <%= f.input :credits, collection: 1..current_user.credits %>
-  <%= f.input :skill_list, collection: @project.skill_list, as: :check_boxes, input_html: {class: "select2-multiple", multiple: true, value: f.object.skill_list.join(",")} %>
-  <%= f.submit %>
-<% end %>

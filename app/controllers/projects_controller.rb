@@ -1,22 +1,11 @@
 class ProjectsController < ApplicationController
   def index
     skip_policy_scope
+
     if current_user.admin?
-      if params[:q].present?
-        sql_query = "name ILIKE :query OR description ILIKE :query"
-        @projects = policy_scope(Project).where(sql_query, query: "%#{params[:q]}%")
-      elsif params[:tag].present?
-        @projects = policy_scope(Project).tagged_with(params[:tag]).uniq
-      else
-        @projects = policy_scope(Project).order(created_at: :desc)
-      end
+      find_projects(Project.created)
     else
-      @projects = current_user.company.all_favorited
-      if params[:q].present?
-        @projects = @projects.select {|project| project.name.include? params[:q]}
-      elsif params[:tag].present?
-        @projects = @projects.select{|project| project.skill_list.include? params[:tag]}
-      end
+      find_projects(Project.preselected)
     end
 
     respond_to do |format|
@@ -25,16 +14,33 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def favorite
+    @user = current_user
+    @project = Project.find(params[:id])
+    authorize @project
+    if @project.status == "created"
+      @project.update(status: "preselected")
+    elsif @project.status == "preselected"
+      @project.update(status: "created")
+    end
+    redirect_to request.referrer
+  end
+
   def favorites
-    # skip_authorization
     authorize Project.new
-    @projects = current_user.company.all_favorited
+    find_projects(Project.preselected)
+
+    respond_to do |format|
+      format.json { render json: { html: render_to_string(partial: "shared/projects_container", locals: { projects: @projects }, formats: [:html]) } }
+      format.html
+    end
   end
 
   def myprojects
     authorize Project.new
-    @projects = current_user.projects
+    @projects = current_user.projects.completed + current_user.projects.preselected
   end
+
 
   def show
     @project = Project.find(params[:id])
@@ -45,21 +51,9 @@ class ProjectsController < ApplicationController
     authorize @project
   end
 
-  def favorite
-    @user = current_user
-    @project = Project.find(params[:id])
-    authorize @project
-    if @user.company.favorited?(@project)
-      @user.company.unfavorite(@project)
-    else
-      @user.company.favorite(@project)
-    end
-    redirect_to request.referrer
-  end
-
   def completedprojects
     authorize Project.new
-    @projects = current_user.projects.where(status: :unstarted)
+    @projects = Project.completed
   end
 
   def update
@@ -76,8 +70,17 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:documents)
+    params.require(:project).permit("status", documents: [])
   end
 
-
+  def find_projects(projects)
+    sql_query = "name ILIKE :query OR description ILIKE :query"
+    if params[:q].present?
+      @projects = projects.where(sql_query, query: "%#{params[:q]}%")
+    elsif params[:tag].present?
+      @projects = projects.tagged_with(params[:tag]).uniq
+    else
+      @projects = projects.order(created_at: :desc)
+    end
+  end
 end

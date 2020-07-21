@@ -2,6 +2,7 @@ puts 'Cleaning DB ...'
 
 Reservation.destroy_all
 Charity.destroy_all
+Chatroom.destroy_all
 Project.destroy_all
 Company.destroy_all
 User.destroy_all
@@ -64,8 +65,8 @@ project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
 project.tache = "Créer formulaire de contact"
+project.status = "preselected"
 project.nbtaches = "8"
-project.status = "unstarted"
 project.save!
 
 project = Project.new
@@ -77,8 +78,8 @@ project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
+project.status = "completed"
 project.nbtaches = "2"
-project.status = "unstarted"
 project.save!
 
 project = Project.new
@@ -90,8 +91,8 @@ project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
-project.nbtaches = "11"
 project.status = "completed"
+project.nbtaches = "11"
 project.save!
 
 project = Project.new
@@ -103,8 +104,8 @@ project.charity = Charity.where(name: "Perce Neige").first
 project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
 project.tache = "Réserver son créneau"
+project.status = "created"
 project.nbtaches = "8"
-project.status = "completed"
 project.save!
 
 project = Project.new
@@ -116,8 +117,8 @@ project.charity = Charity.where(name: "WWF").first
 project.tag_list = "Web, Conseil, Design"
 project.skill_list = "Web, Conseil, Design"
 project.tache = "Publier sur l'Apple store"
+project.status = "created"
 project.nbtaches = "3"
-project.status = "unstarted"
 project.save!
 
 project = Project.new
@@ -129,8 +130,32 @@ project.charity = Charity.where(name: "Sea shepherd").first
 project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
+project.status = "pending"
+project.save!
+
+project = Project.new
+project.name = "Completed1"
+project.description = "Completed1"
+project.address = "4 rue Pierre 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.tag_list = "Juridique, Conseil, Redaction"
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed2"
+project.description = "Completed2"
+project.address = "4 rue Pierre 75019 Paris"
+project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.tag_list = "Juridique, Conseil, Redaction"
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
 project.nbtaches = "4"
-project.status = "current"
 project.save!
 
 puts 'Projects created!'
@@ -207,6 +232,36 @@ user.address = "25 rue des boulets"
 user.skill_list = "CSS, JS, Design"
 user.company = Company.first
 user.avatar_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1586873952/kfn110hfwqteucjluzwx.jpg"
+user.credits = 40
+user.save!
+
+user = User.new
+user.first_name = "Barthélémy"
+user.last_name = "Boillot"
+user.email = "barthelemy@lewagon.org"
+user.password = "barthelemy"
+user.description = "King de l'algo ayant le coeur sur la main"
+user.job = "Dev Fullstack"
+user.admin = true
+user.address = "45 avenue de wagram"
+user.skill_list = "Ruby, JS, React"
+user.company = Company.first
+user.avatar_url = "https://avatars2.githubusercontent.com/u/58515521?v=4"
+user.credits = 40
+user.save!
+
+user = User.new
+user.first_name = "Alexandre"
+user.last_name = "Platteeuw"
+user.email = "alex@lewagon.org"
+user.password = "alexandre"
+user.description = "Génie du Java script"
+user.job = "Dev Fullstack"
+user.admin = false
+user.address = "2 rue de la bastille"
+user.skill_list = "Ruby, JS, React"
+user.company = Company.first
+user.avatar_url = "https://avatars0.githubusercontent.com/u/57015378?v=4"
 user.credits = 40
 user.save!
 

@@ -13,4 +13,7 @@
 @import "pages/index";
 @import "select2/dist/css/select2";
 
-// @import "@fullcalendar/common/main";
+@import "@fullcalendar/common/main";
+@import '@fullcalendar/core/main.css';
+@import '@fullcalendar/daygrid/main.css';
+@import '@fullcalendar/list/main.css';
