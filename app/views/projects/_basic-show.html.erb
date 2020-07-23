@@ -38,7 +38,7 @@
           <div>
             <p>Compétences</p>
             <div class="d-flex flex-row">
-              <% project.tag_list.first(3).each do |tag| %>
+              <% project.skill_list.first(3).each do |tag| %>
                 <span class="badge-coconut">
                   <%= link_to tag.capitalize, tagged_path(tag: tag) %>
                 </span>
