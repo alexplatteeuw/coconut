@@ -39,6 +39,7 @@ class ProjectsController < ApplicationController
 
   def favorites
     authorize Project.new
+    # @projects = current_user.company.all_favorited.reject { |project| project.reservations }
     @projects = current_user.company.all_favorited
 
     respond_to do |format|
