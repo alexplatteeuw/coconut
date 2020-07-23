@@ -88,13 +88,21 @@
   margin-bottom: 0px;
   margin-left: 8px;
 }
-.badge {
+.badge-coconut {
+  display: inline-block;
   background: #DCE0F5;
   font-weight: 400;
   padding: 0.7em;
   margin: 8px;
   border-radius: 5px;
+  font-size: 75%;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .project-figures {
   font-size: 12px;
 }
@@ -103,23 +111,23 @@
   font-weight: 500;
 }
 // PROJECT SKILLS : LINKS
-.badge a {
+.badge-coconut a {
   text-decoration: none;
   color: #0122DC;
 }
-.badge a:link {
+.badge-coconut a:link {
   text-decoration: none;
   color: #0122DC;
 }
-.badge a:visited {
+.badge-coconut a:visited {
   text-decoration: none;
   color: #0122DC;
 }
-.badge a:hover {
+.badge-coconut a:hover {
   text-decoration: none;
   color: #0122DC;
 }
-.badge a:active {
+.badge-coconut a:active {
   text-decoration: none;
   color: #0122DC;
 }
