@@ -1,18 +1,20 @@
 <% unless employees.empty? %>
-
-
-   <div>
-      <h4 class="my-3"> Autres participants au projet :</h4>
-      <hr>
-        <% employees.each do |employee| %>
-          <div class="d-flex justify-content-start m-4">
-            <%= image_tag employee.avatar_url, class: "avatartar mr-3", alt: "avatar" %>
-            <div class="mt-2">
-              <b><%= "#{employee.first_name} #{employee.last_name}" %></b>
-              <p>
-                <%= "#{employee.job}" %>
-              </p>
-             </div>
-          </div>
-        <% end %>
+<div>
+   <h4 class="my-3"> Autres participants :</h4>
+  <% employees.each do |employee| %>
+    <div class="d-flex flex-row justify-content-start">
+      <div>
+        <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
+      </div>
+      <div class="ml-3">
+        <p>
+          <%= "#{employee.first_name} #{employee.last_name}" %>
+        </p>
+        <p>
+          <%= "#{employee.job}" %>
+        </p>
+      </div>
     </div>
+  <% end %>
+</div>
+<% end %>
