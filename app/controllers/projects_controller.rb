@@ -4,14 +4,14 @@ class ProjectsController < ApplicationController
     if current_user.admin?
       if params[:q].present?
         sql_query = "name ILIKE :query OR description ILIKE :query"
-        @projects = policy_scope(Project).where(sql_query, query: "%#{params[:q]}%")
+        @projects = Project.where(sql_query, query: "%#{params[:q]}%").reject { |project| project.status == "completed" }
       elsif params[:tag].present?
-        @projects = policy_scope(Project).tagged_with(params[:tag]).uniq
+        @projects = Project.tagged_with(params[:tag]).uniq.reject { |project| project.status == "completed" }
       else
-        @projects = policy_scope(Project).order(created_at: :desc)
+        @projects = Project.order(created_at: :desc).reject { |project| project.status == "completed" }
       end
     else
-      @projects = current_user.company.all_favorited
+      @projects = current_user.company.all_favorited.reject { |project| current_user.projects.include? project }
       if params[:q].present?
         @projects = @projects.select { |project| project.name.include? params[:q] }
       elsif params[:tag].present?
@@ -63,7 +63,7 @@ class ProjectsController < ApplicationController
 
   def completedprojects
     authorize Project.new
-    @projects = current_user.company.all_favorited.select { |project| project.status == "created" }
+    @projects = Project.where(status: :completed)
   end
 
   def update

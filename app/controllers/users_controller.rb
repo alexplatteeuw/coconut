@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def projects_status
-    unstarted_projects = Project.where(status: :preselected)
+    unstarted_projects = Project.where(status: :created)
     current_projects = Project.where(status: :pending)
     completed_projects = Project.where(status: :completed)
 
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   end
 
   def user_projects_status
-    unstarted_projects = @myprojects.where(status: :preselected)
+    unstarted_projects = @myprojects.where(status: :created)
     current_projects = @myprojects.where(status: :pending)
     completed_projects = @myprojects.where(status: :completed)
 
