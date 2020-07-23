@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       labels: labels,
       datasets: [{
         data: count,
-        backgroundColor: ["pink", "orange", "white", "purple", "yellow", "brown"]
+        backgroundColor: ["#3351F5","#3386FF", "#265AB5", "#0E4AB2","#0E33B2", "#85BBE5", "#71A1D1"]
       }]
     }
   end
