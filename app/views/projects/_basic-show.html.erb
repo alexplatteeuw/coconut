@@ -11,13 +11,6 @@
           </h2>
           <p><%= project.charity.name %></p>
         </div>
-          <%= link_to favorite_project_path(project) do %>
-          <% if project.status == "preselected" && current_user.admin %>
-            <i class="fas fa-star"></i>
-          <% elsif current_user.admin %>
-            <i class="far fa-star"></i>
-          <% end %>
-        <% end %>
       </div>
 
   </div>
@@ -26,8 +19,10 @@
   <div class="row m-0">
     <div class="col p-5">
 
-      <h4 class="mb-4">Détails de la mission:</h4>
-      <%= project.description %>
+      <h4 class="mb-4">Description de la mission :</h4>
+      <div class="text-justify">
+        <%= project.description %>
+      </div>
     </div>
 
     <hr class="vertical-line-show"/>
@@ -36,9 +31,10 @@
       <div class="card-tags">
         <div class="d-flex flex-column">
           <div>
-            <p>Compétences</p>
+            <h4 class="mb-4">Détails :</h4>
+            <p>Compétences recherchées :</p>
             <div class="d-flex flex-row">
-              <% project.tag_list.first(3).each do |tag| %>
+              <% project.skill_list.first(3).each do |tag| %>
                 <span class="badge-coconut">
                   <%= link_to tag.capitalize, tagged_path(tag: tag) %>
                 </span>

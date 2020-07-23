@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
       elsif params[:tag].present?
         @projects = Project.tagged_with(params[:tag]).uniq.reject { |project| project.status == "completed" }
       else
-        @projects = Project.order(created_at: :desc).reject { |project| project.status == "completed" }
+        @projects = Project.order(created_at: :desc).reject { |project| project.status == "completed" }.reject { |project| current_user.company.favorited?(project) }
       end
     else
       @projects = current_user.company.all_favorited.reject { |project| current_user.projects.include? project }

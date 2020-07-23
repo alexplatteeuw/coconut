@@ -9,6 +9,6 @@ class Project < ApplicationRecord
   acts_as_taggable_on :tags, :skills
   acts_as_favoritable
 
-  validates :name, :address, :description, presence: true
+  validates :name, :description, presence: true
   validates :status, inclusion: { in: ['created', 'preselected', 'pending', 'completed'] }, presence: true
 end

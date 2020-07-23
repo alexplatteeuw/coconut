@@ -56,26 +56,20 @@ puts 'Charities created!'
 
 puts 'Creating projects belonging to the same charity...'
 
+
 project = Project.new
-project.name = "Refonte du site internet"
-project.description ="Le site internet des restos du coeur enregistre plus de 10 000 visites uniques par jour. Pour coller à notre nouvelle imagne et notre nouvelle charte graphique nous souhaiterions être accompagnés pour la refonte de celui-ci. Nous recherchons des développeurs séniors qui peuvent nous accompagner et nous guider. Il faut que nos équipes en interne puisse lire ce code et mettre à jour le site. Le télétravail est possible mais nous préférerions une présence physique."
-project.address = "4 Cité d'Hauteville 75010 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
-project.charity = Charity.where(name: "Les Restos du Coeur").first
-project.tag_list = "Informatique, Web, Design"
-project.skill_list = "Informatique, Web, Design"
-project.tache = "Créer formulaire de contact"
-project.status = "created"
-project.nbtaches = "8"
+project.name = "Rachat d'une autre association"
+project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "pending"
 project.save!
 
 project = Project.new
 project.name = "Refonte des statuts de l'association"
 project.description = "A la suite de restructurations internes, les statuts de l'association Médecins du Monde nécessitent une refonte globale. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
-project.address = "4 Cité d'Hauteville 75010 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Médecins du monde").first
-project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
 project.status = "created"
@@ -85,10 +79,7 @@ project.save!
 project = Project.new
 project.name = "Construction de l'intranet"
 project.description = "Dans le cadre d'une grosse campagne de communication interne, nous souhaitons refondre totalement notre intranet avec un design moderne et des supers fonctionnalités"
-project.address = "3 avenue Jean 75019 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Médecins Sans Frontière").first
-project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
 project.status = "created"
@@ -98,10 +89,7 @@ project.save!
 project = Project.new
 project.name = "Aide à la personne"
 project.description = "Nous cherchons des volontaires pour nous aider à rendre des services aux membres de l'association : déménagement, ménage, administratif"
-project.address = "35 rue Jean Jaurès 75019 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Perce Neige").first
-project.tag_list = "Temps, Ménage, administratif"
 project.skill_list = "Temps, Ménage, administratif"
 project.tache = "Réserver son créneau"
 project.status = "created"
@@ -111,35 +99,18 @@ project.save!
 project = Project.new
 project.name = "Création d'une application mobile"
 project.description = "Afin de mettre en avant une nouvelle branche de l'association, nous souhaitons créer une application mobile pour être au plus proche de nos users"
-project.address = "34 avenue Jean Jaurès 75019 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "WWF").first
-project.tag_list = "Web, Conseil, Design"
 project.skill_list = "Web, Conseil, Design"
 project.tache = "Publier sur l'Apple store"
 project.status = "created"
 project.nbtaches = "3"
 project.save!
 
-project = Project.new
-project.name = "Rachat d'une autre association"
-project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques"
-project.address = "4 rue Pierre 75019 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
-project.charity = Charity.where(name: "Sea shepherd").first
-project.tag_list = "Juridique, Conseil, Redaction"
-project.skill_list = "Juridique, Conseil, Redaction"
-project.tache = "Contacter les avocats"
-project.status = "pending"
-project.save!
 
 project = Project.new
 project.name = "Completed1"
 project.description = "Completed1"
-project.address = "4 rue Pierre 75019 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Sea shepherd").first
-project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
 project.status = "completed"
@@ -148,14 +119,21 @@ project.save!
 project = Project.new
 project.name = "Completed2"
 project.description = "Completed2"
-project.address = "4 rue Pierre 75019 Paris"
-project.video_url = "https://res.cloudinary.com/clemlemq/video/upload/v1593869121/Spot_d_appel_au_don_2018-2019_usf9gi.mp4"
 project.charity = Charity.where(name: "Sea shepherd").first
-project.tag_list = "Juridique, Conseil, Redaction"
 project.skill_list = "Juridique, Conseil, Redaction"
 project.tache = "Contacter les avocats"
 project.status = "completed"
 project.nbtaches = "4"
+project.save!
+
+project = Project.new
+project.name = "Refonte du site internet"
+project.description ="Le site internet des restos du coeur enregistre plus de 10 000 visites uniques par jour. Pour coller à notre nouvelle imagne et notre nouvelle charte graphique nous souhaiterions être accompagnés pour la refonte de celui-ci. Nous recherchons des développeurs séniors qui peuvent nous accompagner et nous guider. Il faut que nos équipes en interne puisse lire ce code et mettre à jour le site. Le télétravail est possible mais nous préférerions une présence physique."
+project.charity = Charity.where(name: "Les Restos du Coeur").first
+project.skill_list = "Informatique, Web, Design"
+project.tache = "Créer formulaire de contact"
+project.status = "created"
+project.nbtaches = "8"
 project.save!
 
 puts 'Projects created!'
@@ -164,27 +142,22 @@ puts 'Creating companies...'
 
 company = Company.new
 company.name = "Instagram"
-company.address = "16 villa Gaudelet 75011 Paris"
 company.save!
 
 company = Company.new
 company.name = "Pixel me"
-company.address = "1 rue ravignan, Paris"
 company.save!
 
 company = Company.new
 company.name = "Monoprix"
-company.address = "2 rue ravignan, Paris"
 company.save!
 
 company = Company.new
 company.name = "Quiiet"
-company.address = "6 rue ravignan, Paris"
 company.save!
 
 company = Company.new
 company.name = "Bergamotte"
-company.address = "10 rue ravignan, Paris"
 company.save!
 
 puts 'Companies created!'
