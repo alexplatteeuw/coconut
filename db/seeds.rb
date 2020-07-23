@@ -230,7 +230,7 @@ user.job = "Developpeur"
 user.admin = false
 user.address = "25 rue du javelot 75013 Paris"
 user.skill_list = "CSS, JS, Design"
-user.company = Company.last
+user.company = Company.first
 user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
 user.credits = 40
 user.save!
