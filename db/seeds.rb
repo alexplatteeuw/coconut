@@ -106,15 +106,66 @@ project.status = "created"
 project.nbtaches = "3"
 project.save!
 
+project = Project.new
+project.name = "Chargé de mission - controle de gestion logistique"
+project.description ="Au sein des services financiers du siège des Restaurants du Cœur, la cellule gestion est en
+lien avec les 117 associations départementales (AD) sur toutes les questions financières,
+gestion et paie.
+A ce titre, elle assure des missions variées : audit de gestion des AD, production des
+plaquettes des comptes annuels des AD, contrôle budgétaire et contrôle de gestion, contrôle
+des paies, élaboration de procédures…
+Le service est actuellement structuré en six pôles : audit, budget/gestion, comptabilité,
+formation, paie, procédures.
+Le chef de mission logistique sera en liaison permanente avec les autres services du siège,
+notamment le pôle alimentaire, mais aussi avec les AD.
+
+Les missions:
+- accompagner les opérationnels dans l’optimisation des processus de stockage et de
+gestion des flux de marchandises des Restos du Cœur (environnement multi-sites)
+- apporter de la visibilité à l’organisation quant à l'activité de ses sites logistiques (AN/AD)
+et mettre à la disposition des opérationnels (pôle alimentaire et responsables Appros des
+AD) des outils de pilotage adaptés de façon à comprendre, soutenir et optimiser le
+développement de l’activité logistique
+- participer activement à l’optimisation du système d’information de gestion et à la mise en
+place d’outils lui permettant de mener à bien ses tâches
+
+Lieu de la mission: au siège de l’Association Nationale des Restos du Cœur : 42, rue de Clichy – 75009 Paris."
+project.charity = Charity.where(name: "Les Restos du Coeur").first
+project.skill_list = "Informatique, Gestion, Logistique"
+project.tache = "Lancer le kick off"
+project.status = "created"
+project.nbtaches = "10"
+project.save!
+
 
 project = Project.new
-project.name = "Completed1"
-project.description = "Completed1"
-project.charity = Charity.where(name: "Sea shepherd").first
-project.skill_list = "Juridique, Conseil, Redaction"
-project.tache = "Contacter les avocats"
-project.status = "completed"
+project.name = "Création d'une application mobile"
+project.description = "Afin de mettre en avant une nouvelle branche de l'association, nous souhaitons créer une application mobile pour être au plus proche de nos users"
+project.charity = Charity.where(name: "WWF").first
+project.skill_list = "Web, Conseil, Design"
+project.tache = "Publier sur l'Apple store"
+project.status = "created"
+project.nbtaches = "3"
 project.save!
+
+project = Project.new
+project.name = "Chef de projet Intranet"
+project.description ="Les Restos du Cœur animent une communauté de 70 000 bénévoles en France. Ces bénévoles sont actifs dans plus de 2 000 centres d’activité, eux-mêmes rattachés à 117
+associations départementales. L’accès et le partage d’information est une préoccupation
+quotidienne des Restos du Cœur. Plusieurs outils sont déjà en place. Parmi eux, un intranet
+est en cours de refonte.
+
+Le chef de projet doit avant tout avoir une capacité à coordonner, ce n’est pas un intervenant
+technique, même si la compréhension de l’intérêt de l’intranet est un préalable.
+
+Lieu de la mission: au siège de l’Association Nationale des Restos du Cœur : 42, rue de Clichy – 75009 Paris."
+project.charity = Charity.where(name: "Les Restos du Coeur").first
+project.skill_list = "Informatique, Web, Design"
+project.tache = "Créer formulaire de contact"
+project.status = "created"
+project.nbtaches = "8"
+project.save!
+
 
 project = Project.new
 project.name = "Completed2"
@@ -127,14 +178,41 @@ project.nbtaches = "4"
 project.save!
 
 project = Project.new
-project.name = "Refonte du site internet"
-project.description ="Le site internet des restos du coeur enregistre plus de 10 000 visites uniques par jour. Pour coller à notre nouvelle imagne et notre nouvelle charte graphique nous souhaiterions être accompagnés pour la refonte de celui-ci. Nous recherchons des développeurs séniors qui peuvent nous accompagner et nous guider. Il faut que nos équipes en interne puisse lire ce code et mettre à jour le site. Le télétravail est possible mais nous préférerions une présence physique."
-project.charity = Charity.where(name: "Les Restos du Coeur").first
-project.skill_list = "Informatique, Web, Design"
-project.tache = "Créer formulaire de contact"
-project.status = "created"
-project.nbtaches = "8"
+project.name = "Completed1"
+project.description = "Completed1"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
 project.save!
+
+project = Project.new
+project.name = "Completed3"
+project.description = "Completed3"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed4"
+project.description = "Completed4"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed5"
+project.description = "Completed5"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
 
 puts 'Projects created!'
 
