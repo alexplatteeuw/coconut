@@ -86,25 +86,8 @@ project.status = "created"
 project.nbtaches = "11"
 project.save!
 
-project = Project.new
-project.name = "Aide à la personne"
-project.description = "Nous cherchons des volontaires pour nous aider à rendre des services aux membres de l'association : déménagement, ménage, administratif"
-project.charity = Charity.where(name: "Perce Neige").first
-project.skill_list = "Temps, Ménage, administratif"
-project.tache = "Réserver son créneau"
-project.status = "created"
-project.nbtaches = "8"
-project.save!
 
-project = Project.new
-project.name = "Création d'une application mobile"
-project.description = "Afin de mettre en avant une nouvelle branche de l'association, nous souhaitons créer une application mobile pour être au plus proche de nos users"
-project.charity = Charity.where(name: "WWF").first
-project.skill_list = "Web, Conseil, Design"
-project.tache = "Publier sur l'Apple store"
-project.status = "created"
-project.nbtaches = "3"
-project.save!
+
 
 project = Project.new
 project.name = "Chargé de mission - controle de gestion logistique"
@@ -137,6 +120,15 @@ project.status = "created"
 project.nbtaches = "10"
 project.save!
 
+project = Project.new
+project.name = "Aide à la personne"
+project.description = "Nous cherchons des volontaires pour nous aider à rendre des services aux membres de l'association : déménagement, ménage, administratif"
+project.charity = Charity.where(name: "Perce Neige").first
+project.skill_list = "Temps, Ménage, administratif"
+project.tache = "Réserver son créneau"
+project.status = "created"
+project.nbtaches = "8"
+project.save!
 
 project = Project.new
 project.name = "Création d'une application mobile"
