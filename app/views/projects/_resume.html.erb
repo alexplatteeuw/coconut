@@ -24,10 +24,10 @@
           <div class="d-flex justify-content-start m-4">
             <%= image_tag  @user.avatar_url, class: "avatartar mr-3", alt: "avatar" %>
             <div class="d-flex align-items-center">
-              <span class="badge-coconut">
+              <span class="badge badge-info p-2 mr-3">
                 <p>To do</p>
               </span>
-              <span class="badge-coconut">
+              <span class="badge badge-dark p-2">
                 <p>Urgent</p>
               </span>
             </div>
@@ -47,13 +47,11 @@
           </div>
 
 
-
-
     <div class="card_view">
       <h2 class="mt-3">Prochain évènement</h2>
-      <hr>
-      <% if project.events.first %>
-        <h3> <%= project.events.first.title %></h3>
+      <hr class="mb-5">
+      <% project.events.limit(3).each do |event| %>
+        <%= render 'shared/event-list-items', event: event %>
       <% end %>
     </div>
 
