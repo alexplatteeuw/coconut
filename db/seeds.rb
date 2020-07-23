@@ -58,6 +58,15 @@ puts 'Creating projects belonging to the same charity...'
 
 
 project = Project.new
+project.name = "Rachat d'une autre association"
+project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "pending"
+project.save!
+
+project = Project.new
 project.name = "Refonte des statuts de l'association"
 project.description = "A la suite de restructurations internes, les statuts de l'association Médecins du Monde nécessitent une refonte globale. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo qui, architecto inventore officia, odio asperiores libero cum? Iusto consectetur odio officiis, ipsum maxime necessitatibus, tenetur deserunt tempora consequatur libero dolore."
 project.charity = Charity.where(name: "Médecins du monde").first
@@ -97,14 +106,6 @@ project.status = "created"
 project.nbtaches = "3"
 project.save!
 
-project = Project.new
-project.name = "Rachat d'une autre association"
-project.description = "Dans le cadre du rachat d'une autre association, nous aurions besoin de conseil et d'aide pour rédiger l'ensemble des contrats et des nouveaux statuts juridiques"
-project.charity = Charity.where(name: "Sea shepherd").first
-project.skill_list = "Juridique, Conseil, Redaction"
-project.tache = "Contacter les avocats"
-project.status = "pending"
-project.save!
 
 project = Project.new
 project.name = "Completed1"
@@ -141,27 +142,22 @@ puts 'Creating companies...'
 
 company = Company.new
 company.name = "Instagram"
-company.address = "16 villa Gaudelet 75011 Paris"
 company.save!
 
 company = Company.new
 company.name = "Pixel me"
-company.address = "1 rue ravignan, Paris"
 company.save!
 
 company = Company.new
 company.name = "Monoprix"
-company.address = "2 rue ravignan, Paris"
 company.save!
 
 company = Company.new
 company.name = "Quiiet"
-company.address = "6 rue ravignan, Paris"
 company.save!
 
 company = Company.new
 company.name = "Bergamotte"
-company.address = "10 rue ravignan, Paris"
 company.save!
 
 puts 'Companies created!'
