@@ -103,13 +103,15 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.project-figures {
-  font-size: 12px;
+.project-figures span {
+  font-size: 24px;
 }
+
 .project-figures span {
   color: #0122DC;
   font-weight: 500;
 }
+
 // PROJECT SKILLS : LINKS
 .badge-coconut a {
   text-decoration: none;

@@ -52,8 +52,8 @@
     <div class="card_view">
       <h2 class="mt-3">Prochain évènement</h2>
       <hr>
-      <% project.events.each do |event| %>
-      <%= event.title %>
+      <% if project.events.first %>
+        <h3> <%= project.events.first.title %></h3>
       <% end %>
     </div>
 
