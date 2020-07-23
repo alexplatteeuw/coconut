@@ -1,4 +1,4 @@
-<div class="card-product my-5 d-flex flex-row justify-content-around">
+<div class="card-product my-5 d-flex flex-row justify-content-around" id="project-<%= project.id %>">
   <div class="card-logo">
     <%= image_tag project.charity.logo %>
   </div>
@@ -10,13 +10,15 @@
         </h2>
         <p><%= project.charity.name %></p>
       </div>
+    <% unless project.status == "completed" %>
       <%= link_to favorite_project_path(project) do %>
-        <% if project.status =="preselected" && current_user.admin %>
+        <% if current_user.company.favorited?(project) && current_user.admin %>
           <i class="fas fa-star"></i>
         <% elsif current_user.admin %>
           <i class="far fa-star"></i>
         <% end %>
       <% end %>
+    <% end %>
     </div>
     <p class="card-description">
       <%= project.description %>
