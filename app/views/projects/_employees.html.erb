@@ -1,8 +1,7 @@
 <% unless employees.empty? %>
 
+<h4 class="my-3"> Autres participants au projet :</h4>
 
-   <div>
-      <h4 class="my-3"> Autres participants au projet :</h4>
       <hr>
         <% employees.each do |employee| %>
           <div class="d-flex justify-content-start m-4">
@@ -12,7 +11,10 @@
               <p>
                 <%= "#{employee.job}" %>
               </p>
+
+
              </div>
           </div>
         <% end %>
-    </div>
+
+<% end %>
