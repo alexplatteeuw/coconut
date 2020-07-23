@@ -1,11 +1,22 @@
 class ProjectsController < ApplicationController
   def index
     skip_policy_scope
-
     if current_user.admin?
-      find_projects(Project.created)
+      if params[:q].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @projects = policy_scope(Project).where(sql_query, query: "%#{params[:q]}%")
+      elsif params[:tag].present?
+        @projects = policy_scope(Project).tagged_with(params[:tag]).uniq
+      else
+        @projects = policy_scope(Project).order(created_at: :desc)
+      end
     else
-      find_projects(Project.preselected)
+      @projects = current_user.company.all_favorited
+      if params[:q].present?
+        @projects = @projects.select { |project| project.name.include? params[:q] }
+      elsif params[:tag].present?
+        @projects = @projects.select { |project| project.skill_list.include? params[:tag] }
+      end
     end
 
     respond_to do |format|
@@ -18,17 +29,17 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project = Project.find(params[:id])
     authorize @project
-    if @project.status == "created"
-      @project.update(status: "preselected")
-    elsif @project.status == "preselected"
-      @project.update(status: "created")
+    if @user.company.favorited?(@project)
+      @user.company.unfavorite(@project)
+    else
+      @user.company.favorite(@project)
     end
     redirect_to request.referrer
   end
 
   def favorites
     authorize Project.new
-    find_projects(Project.preselected)
+    @projects = current_user.company.all_favorited
 
     respond_to do |format|
       format.json { render json: { html: render_to_string(partial: "shared/projects_container", locals: { projects: @projects }, formats: [:html]) } }
@@ -38,9 +49,8 @@ class ProjectsController < ApplicationController
 
   def myprojects
     authorize Project.new
-    @projects = current_user.projects.completed + current_user.projects.preselected
+    @projects = current_user.projects
   end
-
 
   def show
     @project = Project.find(params[:id])
@@ -53,7 +63,7 @@ class ProjectsController < ApplicationController
 
   def completedprojects
     authorize Project.new
-    @projects = Project.completed
+    @projects = current_user.company.all_favorited.select { |project| project.status == "created" }
   end
 
   def update
@@ -71,16 +81,5 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit("status", documents: [])
-  end
-
-  def find_projects(projects)
-    sql_query = "name ILIKE :query OR description ILIKE :query"
-    if params[:q].present?
-      @projects = projects.where(sql_query, query: "%#{params[:q]}%")
-    elsif params[:tag].present?
-      @projects = projects.tagged_with(params[:tag]).uniq
-    else
-      @projects = projects.order(created_at: :desc)
-    end
   end
 end
