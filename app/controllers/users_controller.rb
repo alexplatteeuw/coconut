@@ -67,8 +67,8 @@ class UsersController < ApplicationController
 
   def user_projects_status
     unstarted_projects = @myprojects.where(status: :created)
-    current_projects = @myprojects.where(status: :pending)
-    completed_projects = @myprojects.where(status: :completed)
+    current_projects = @myprojects.select { |project| !project.reservations.empty? && project.status != "completed" }
+    completed_projects = @myprojects.select { |project| !project.reservations.empty? && project.status == "completed" }
 
     {
       labels: [""],
