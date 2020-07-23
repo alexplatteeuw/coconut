@@ -6,7 +6,6 @@ export default class extends Controller {
   static targets = ["name", "entries"]
 
   query() {
-  setTimeout(() => {
     Rails.ajax({
       type: 'GET',
       url : `${window.location.href.split('?')[0]}?q=${this.nameTarget.value}`,
@@ -15,6 +14,5 @@ export default class extends Controller {
         setTimeout(() => {this.entriesTarget.innerHTML = data.html}, 100);
       }
     })
-  }, 100);
   }
 }
