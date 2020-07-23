@@ -13,7 +13,7 @@ const initCalendar = () => {
 
   const calendarEl = document.getElementById('calendardiv');
   const projectId = calendarEl.dataset.project;
-  const itemList = document.querySelector(".card_view");
+  const itemList = document.querySelector("#event-list");
 
   const calendar = new Calendar(calendarEl, {
     locale: frLocale,
@@ -66,10 +66,7 @@ const initCalendar = () => {
 
       calendar.unselect();
 
-      itemList.insertAdjacentHTML("beforeend", `<li><div class="d-flex flex-column justify-content-start ml-3 mt-3" >
-  <h4><i class="fa fa-arrow-right mr-2 text-dark" aria-hidden="true"></i>${title}</h4>
-  <div class="ml-4">${start}</div>
-</div></li>`);
+      itemList.insertAdjacentHTML("beforeend", `<div class="d-flex flex-column justify-content-start ml-3 mt-3" ><h4><i class="fa fa-arrow-right mr-2 text-dark" aria-hidden="true"></i>${title}</h4></div>`);
     },
     unselect: function () {
       calendar.refetchEvents();
