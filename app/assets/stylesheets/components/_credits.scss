@@ -6,3 +6,30 @@
   border-radius: 5px;
   padding: 20px;
 }
+
+ .form-check {
+  margin: 0.5em 1.7em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+ .form-check  label {
+  color: #0122DC;
+  background: #DCE0F5;
+  font-weight: 400;
+  padding: 0.5em;
+  border-radius: 5px;
+  margin-left: 0.5em;
+ }
+
+ .form-check-input {
+  margin-top: 0;
+  margin-right: 2px;
+}
+
+.modal-content {
+  width: 130%;
+  padding: 2em;
+}
