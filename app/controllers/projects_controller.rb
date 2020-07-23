@@ -40,7 +40,14 @@ class ProjectsController < ApplicationController
   def favorites
     authorize Project.new
     # @projects = current_user.company.all_favorited.reject { |project| project.reservations }
-    @projects = current_user.company.all_favorited
+    if params[:q].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @projects = Project.where(sql_query, query: "%#{params[:q]}%").select { |project| current_user.company.favorited?(project) }
+    elsif params[:tag].present?
+      @projects = Project.tagged_with(params[:tag]).uniq.select { |project| current_user.company.favorited?(project) }
+    else
+      @projects = Project.select { |project| current_user.company.favorited?(project) }
+    end
 
     respond_to do |format|
       format.json { render json: { html: render_to_string(partial: "shared/projects_container", locals: { projects: @projects }, formats: [:html]) } }
