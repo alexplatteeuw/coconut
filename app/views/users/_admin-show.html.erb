@@ -1,5 +1,20 @@
+
+
 <div class="container pt-4 id="first-row>
-  <h3 class="p-4">Informations sur mon équipe </h3>
+  <h3 class="p-4"> Mes compteurs : </h3>
+   <div class="col d-flex justify-content-start">
+
+            <div class="counter mr-5">
+                <div class="card-title">total projets</div>
+                <div class="number"> <%= @projects.count %>  </div>
+              </div>
+
+            <div class="counter mr-5">
+                <div class="card-title">heures financées</div>
+                <div class="number"> 60 </div>
+              </div>
+    </div>
+  <h3 class="p-4">Informations sur mon équipe :</h3>
   <div class="row pb-4">
     <div class="col">
       Disponibilité de mon équipe à l'instant T
@@ -14,21 +29,8 @@
       </div>
     </div>
   </div>
-     <div class="col d-flex justify-content-center">
 
-
-            <div class="counter m-3">
-                <div class="card-title"> total projets: </div>
-                <div> <%= @projects.count %>  </div>
-              </div>
-
-            <div class="counter-2 m-3">
-                <div class="card-title"> Nombre d'heures financées :</div>
-                <div> 60 </div>
-              </div>
-
-    </div>
-  <h3 class="p-4"> Suivi des projets de l'entreprise </h3>
+  <h3 class="p-4"> Suivi des projets de l'entreprise : </h3>
   <div class="row">
     <div class="col">
       <div class="chart-card">

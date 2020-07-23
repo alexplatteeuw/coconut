@@ -7,12 +7,8 @@ class Project < ApplicationRecord
   has_one :chatroom, dependent: :destroy
 
   acts_as_taggable_on :tags, :skills
-
-  STATUSES = ["created", "preselected", "pending", "completed"]
-  enum status: STATUSES
+  acts_as_favoritable
 
   validates :name, :address, :description, presence: true
-  validates :status, inclusion: { in: STATUSES }, presence: true
-
-  acts_as_favoritable
+  validates :status, inclusion: { in: ['created', 'preselected', 'pending', 'completed'] }, presence: true
 end

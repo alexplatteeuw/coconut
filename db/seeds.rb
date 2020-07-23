@@ -7,7 +7,7 @@ Project.destroy_all
 Company.destroy_all
 User.destroy_all
 
-puts 'Creating 4 charities ...'
+puts 'Creating charities ...'
 
 charity = Charity.new
 charity.name =  "Les Restos du Coeur"
@@ -54,7 +54,7 @@ charity.save!
 
 puts 'Charities created!'
 
-puts 'Creating 6 projects belonging to the same charity...'
+puts 'Creating projects belonging to the same charity...'
 
 project = Project.new
 project.name = "Refonte du site internet"
@@ -65,7 +65,7 @@ project.charity = Charity.where(name: "Les Restos du Coeur").first
 project.tag_list = "Informatique, Web, Design"
 project.skill_list = "Informatique, Web, Design"
 project.tache = "Créer formulaire de contact"
-project.status = "preselected"
+project.status = "created"
 project.nbtaches = "8"
 project.save!
 
@@ -78,7 +78,7 @@ project.charity = Charity.where(name: "Médecins du monde").first
 project.tag_list = "Juridique, Loi 1901"
 project.skill_list = "Juridique, Loi 1901"
 project.tache = "Vérifier la jurisprudence"
-project.status = "completed"
+project.status = "created"
 project.nbtaches = "2"
 project.save!
 
@@ -91,7 +91,7 @@ project.charity = Charity.where(name: "Médecins Sans Frontière").first
 project.tag_list = "RH, Communication, Design, Web"
 project.skill_list = "RH, Communication, Design, Web"
 project.tache = "Contacter le gestionnaire de réseau"
-project.status = "completed"
+project.status = "created"
 project.nbtaches = "11"
 project.save!
 
@@ -160,7 +160,7 @@ project.save!
 
 puts 'Projects created!'
 
-puts 'Creating a company...'
+puts 'Creating companies...'
 
 company = Company.new
 company.name = "Instagram"
@@ -187,9 +187,9 @@ company.name = "Bergamotte"
 company.address = "10 rue ravignan, Paris"
 company.save!
 
-puts 'Company created!'
+puts 'Companies created!'
 
-puts 'Creating 2 users belonging to the same company...'
+puts 'Creating users...'
 
 admin_user = User.new
 admin_user.first_name = "Maxime"
@@ -206,21 +206,6 @@ admin_user.avatar_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_
 admin_user.save!
 
 user = User.new
-user.first_name = "Clément"
-user.last_name = "Lemaire"
-user.email = "clem@lewagon.org"
-user.password = "clement"
-user.description = "Ingénieur informatique qui connaît par coeur le setup du Wagon"
-user.job = "Developpeur"
-user.admin = false
-user.address = "25 rue du javelot 75013 Paris"
-user.skill_list = "CSS, JS, Design"
-user.company = Company.last
-user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
-user.credits = 40
-user.save!
-
-user = User.new
 user.first_name = "Pauline"
 user.last_name = "Paris"
 user.email = "pauline@lewagon.org"
@@ -232,6 +217,21 @@ user.address = "25 rue des boulets"
 user.skill_list = "CSS, JS, Design"
 user.company = Company.first
 user.avatar_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1586873952/kfn110hfwqteucjluzwx.jpg"
+user.credits = 40
+user.save!
+
+user = User.new
+user.first_name = "Clément"
+user.last_name = "Lemaire"
+user.email = "clem@lewagon.org"
+user.password = "clement"
+user.description = "Ingénieur informatique qui connaît par coeur le setup du Wagon"
+user.job = "Developpeur"
+user.admin = false
+user.address = "25 rue du javelot 75013 Paris"
+user.skill_list = "CSS, JS, Design"
+user.company = Company.last
+user.avatar_url = "https://avatars3.githubusercontent.com/u/60347959?v=4"
 user.credits = 40
 user.save!
 
