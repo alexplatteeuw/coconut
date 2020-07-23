@@ -137,24 +137,6 @@ project.status = "created"
 project.nbtaches = "10"
 project.save!
 
-project = Project.new
-project.name = "Completed1"
-project.description = "Completed1"
-project.charity = Charity.where(name: "Sea shepherd").first
-project.skill_list = "Juridique, Conseil, Redaction"
-project.tache = "Contacter les avocats"
-project.status = "completed"
-project.save!
-
-project = Project.new
-project.name = "Completed2"
-project.description = "Completed2"
-project.charity = Charity.where(name: "Sea shepherd").first
-project.skill_list = "Juridique, Conseil, Redaction"
-project.tache = "Contacter les avocats"
-project.status = "completed"
-project.nbtaches = "4"
-project.save!
 
 project = Project.new
 project.name = "Création d'une application mobile"
@@ -183,6 +165,54 @@ project.tache = "Créer formulaire de contact"
 project.status = "created"
 project.nbtaches = "8"
 project.save!
+
+
+project = Project.new
+project.name = "Completed2"
+project.description = "Completed2"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.nbtaches = "4"
+project.save!
+
+project = Project.new
+project.name = "Completed1"
+project.description = "Completed1"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed3"
+project.description = "Completed3"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed4"
+project.description = "Completed4"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
+project = Project.new
+project.name = "Completed5"
+project.description = "Completed5"
+project.charity = Charity.where(name: "Sea shepherd").first
+project.skill_list = "Juridique, Conseil, Redaction"
+project.tache = "Contacter les avocats"
+project.status = "completed"
+project.save!
+
 
 puts 'Projects created!'
 
