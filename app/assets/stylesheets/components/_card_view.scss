@@ -1,9 +1,9 @@
 .card_view {
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  height: 400px;
-  width: 300px;
-  border-radius: 5px;
-  padding: 0 25px;
+//   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+//   height: 250px;
+  width: 250px;
+//   border-radius: 5px;
+//   padding: 0 25px;
 }
 
 .card_view h2 {
@@ -17,7 +17,15 @@
   font-size: 16px;
   text-align: center;
   padding: 13px;
-  color: $cocoblueprimarydark;
+  background: $cocoblueprimarydark;
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card_view p {
