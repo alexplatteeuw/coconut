@@ -6,9 +6,9 @@
       <div>
         <%= image_tag employee.avatar_url, class: "avatar", alt: "avatar" %>
       </div>
-      <div class="ml-3">
+      <div class="ml-3 mb-3">
         <p>
-          <%= "#{employee.first_name} #{employee.last_name}" %>
+          <b><%= "#{employee.first_name} #{employee.last_name}" %></b>
         </p>
         <p>
           <%= "#{employee.job}" %>
