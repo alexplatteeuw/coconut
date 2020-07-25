@@ -2,12 +2,20 @@ b {
   font-weight: 500;
 }// Specific CSS for your home-page
 
-h4 {
+
+h5 {
   font-size: 18px;
   color: $cocoblueprimary;
   margin-bottom: 5px;
 }
 
-p {
-  font-size: 20px;
+
+h6 {
+  font-size: 10px;
+  color: $cocolightgrey;
+  margin-bottom: 5px;
+}
+
+i {
+  font-size: 12px;
 }
