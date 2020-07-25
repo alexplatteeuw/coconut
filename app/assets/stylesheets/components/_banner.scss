@@ -1,9 +1,10 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: calc(100vh - 260px);
-  margin-bottom: 20px;
+  height: calc(100vh - 160px);
+  background-color: $cocoblueprimary;
+  padding: 0 150px;
+}
+.img-banner {
+  width: 500px;
 }
 
 .banner h1 {
