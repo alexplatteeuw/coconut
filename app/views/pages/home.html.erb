@@ -1,7 +1,7 @@
 <%= render 'shared/banner' %>
 <div class="container">
   <div class="d-flex flex-column">
-    <h1 class="pb-3 d-flex justify-content-center">Le fonctionnement de Coconut en 4 étapes
+    <h1 class="mt-5 pb-3 d-flex justify-content-center mt-4">Le fonctionnement de Coconut en 4 étapes
     </h1>
     <p class="pb-3 d-flex justify-content-center">Une plateforme solidaire simple et adaptée aux enjeux de nos associations et entreprises partenaires
     </p>
@@ -21,16 +21,8 @@
     </div>
     <div class="card_view">
       <h3>4</h3>
-      <p class=""> Les besoins des associations sont calibrés sur des formats de missions en mécénat de compétences. Les missions sont remontées sur les plateformes des entreprises partenaires de Coconut.</p>
+      <p class="mb-5"> Les besoins des associations sont calibrés sur des formats de missions en mécénat de compétences. Les missions sont remontées sur les plateformes des entreprises partenaires de Coconut.</p>
     </div>
-
-
-  </div>
-  <h1 class="pb-3">Nos projects en cours</h1>
-  <div class="">
-    <% @projects.limit(4).each do |project| %>
-      <%= render "shared/card-project", project: project %>
-    <% end %>
   </div>
 </div>
 

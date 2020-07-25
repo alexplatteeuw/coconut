@@ -1,9 +1,11 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: calc(100vh - 260px);
-  margin-bottom: 20px;
+  height: calc(100vh - 160px);
+  background-color: $cocoblueprimary;
+  padding: 0 100px 0 150px;
+}
+.img-banner {
+  width: 600px;
+  align-self: flex-end;
 }
 
 .banner h1 {
@@ -31,4 +33,11 @@
 
 .a {
   border-radius: 10px;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
 }
