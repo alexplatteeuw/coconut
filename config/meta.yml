@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Coconut"
+meta_title: "Coconut - le mécenat de compétence 2.0"
+meta_description: "Une plateforme solidaire simple et adaptée aux enjeux de nos associations et entreprises partenaires"
+meta_image: "metaimage.png" # should exist in `app/assets/images/`
+
