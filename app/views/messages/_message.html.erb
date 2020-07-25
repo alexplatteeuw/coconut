@@ -1,4 +1,4 @@
-<div class="message-container <%= "current-user" if message.user == current_user %>" id="message-<%= message.id %>">
+<div class="message-container" id="message-<%= message.id %>">
   <div>
     <%= image_tag message.user.avatar_url %>
     <div class="message-details">

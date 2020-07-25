@@ -66,7 +66,7 @@ const initCalendar = () => {
 
       calendar.unselect();
 
-      itemList.insertAdjacentHTML("beforeend", `<div class="d-flex flex-column justify-content-start ml-3 mt-3" ><h4><i class="fa fa-arrow-right mr-2 text-dark" aria-hidden="true"></i>${title}</h4></div>`);
+      itemList.insertAdjacentHTML("beforeend", `<div class="d-flex flex-column justify-content-start ml-3 mt-3" ><h5><i class="fa fa-arrow-right mr-2 text-dark" aria-hidden="true"></i>${title}</h5></div>`);
     },
     unselect: function () {
       calendar.refetchEvents();

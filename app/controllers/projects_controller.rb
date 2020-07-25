@@ -75,6 +75,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @project = Project.find(params[:id])
     authorize @project
     @project.update(project_params)
