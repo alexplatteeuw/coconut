@@ -1,9 +1,9 @@
 .card_view {
-//   box-shadow: 0 0 8px rgba(0,0,0,0.2);
-//   height: 250px;
-  width: 250px;
-//   border-radius: 5px;
-//   padding: 0 25px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  height: 400px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 0 25px;
 }
 
 .card_view h2 {
@@ -14,6 +14,28 @@
 }
 
 .card_view h3 {
+  font-size: 16px;
+  text-align: center;
+  padding: 13px;
+  color: $cocoblueprimarydark;
+}
+
+.card_view p {
+ margin: 0px;
+ font-size: 12px;
+}
+
+.avatartar {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.card_home {
+  width: 250px;
+}
+
+.card_home h3 {
   font-size: 16px;
   text-align: center;
   padding: 13px;
@@ -28,13 +50,12 @@
   justify-content: center;
 }
 
-.card_view p {
+.card_home p {
  margin: 0px;
  font-size: 12px;
 }
 
-.avatartar {
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-}
+
+
+
+
