@@ -3,5 +3,5 @@
 meta_product_name: "Coconut"
 meta_title: "Coconut - le mécenat de compétence 2.0"
 meta_description: "Une plateforme solidaire simple et adaptée aux enjeux de nos associations et entreprises partenaires"
-meta_image: "chttps://files.slack.com/files-pri/T02NE0241-F0179RTBXBR/coconut_banner.png" # should exist in `app/assets/images/`
+meta_image: "metaimage.png" # should exist in `app/assets/images/`
 
